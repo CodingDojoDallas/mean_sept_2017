@@ -16,7 +16,7 @@ Please commit daily. That way we can provide you with feedback :) or just a thum
 https://codingdojo-dallas.slack.com/files/katemoc/F427ZQZPY/github_workflow_v4.pdf
 
 # Videos
-Coming soon..
+[MEAN - Intro to JavaScript](https://youtu.be/rdBiLTJdzpk "MEAN - Intro to JavaScript") <br>
 
 # Resources
 [MDN JavaScript Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript "MDN JavaScript Documentation") <br>
