@@ -6,7 +6,10 @@ I :heart: JavaScript!!
  1. Fork this repo to your github account.
  2. Clone it locally onto your laptop.
  3. Create a folder with your name, ex: cody_williams
- 4. Add *this* (https://github.com/CodingDojoDallas/mean_sept_2017/) repo as a REMOTE to your locally cloned copy.
+ 4. Add *this* repo as a REMOTE to your locally cloned copy.
+ ```
+ git remote add upstream https://github.com/CodingDojoDallas/mean_sept_2017.git
+ ```
  5. Profit!
  
 # Daily Commits
