@@ -19,7 +19,7 @@ https://codingdojo-dallas.slack.com/files/katemoc/F427ZQZPY/github_workflow_v4.p
 Coming soon..
 
 # Resources
-Coming soon...
+[MDN JavaScript Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript "MDN JavaScript Documentation") <br>
 
 # Schedule
 
