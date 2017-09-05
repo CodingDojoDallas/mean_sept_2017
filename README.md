@@ -20,7 +20,7 @@ Coming soon..
 
 # Resources
 [MDN JavaScript Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript "MDN JavaScript Documentation") <br>
-[W3Schools - JavaScript](https://www.w3schools.com/js/ "W3Schools - JavaScript") <br>
+[W3Schools JavaScript Documentation](https://www.w3schools.com/js/ "W3Schools - JavaScript") <br>
 [ES6 Cheatsheet](https://github.com/DrkSephy/es6-cheatsheet "ES6 Cheatsheet") <br>
 
 # Schedule
