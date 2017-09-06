@@ -24,13 +24,13 @@ let users = {
     ]
  };
 
-for (i in users){
-  console.log(i);
-  for (key in users[i]){
-    var keyPlus = parseInt(key) + 1;
-    var nameLength = users[i][key].last_name.length + users[i][key].first_name.length
-    var nameString = `${keyPlus} - ${users[i][key].last_name}, ${users[i][key].first_name} - ${nameLength}`;
-
+for (key in users){
+  console.log(key);
+  let keyPlus = 0;
+  for (let user of users[key]){
+    keyPlus++;
+    var nameLength = user.last_name.length + user.first_name.length
+    var nameString = `${keyPlus} - ${user.last_name}, ${user.first_name} - ${nameLength}`;
     console.log(nameString);
   }
 }
