@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script>
+            function star_string(num) {
+                return "*".repeat(num)
+            }
+            let stars = star_string(8)
+            console.log(stars)
+
+            function draw_stars(arr) {
+                for (var i = 0; i < arr.length; i++) {
+                     console.log("*".repeat(arr[i]))
+                }
+            }
+            let x = [4, 6, 1, 3, 5, 7, 25]
+            draw_stars(x)
+
+            function better_draw_stars(arr) {
+                for (var i = 0; i < arr.length; i++) {
+                    if (typeof arr[i] === 'string') {
+                        console.log(arr[i][0].repeat(arr[i].length).toLowerCase())
+                    } else {
+                        console.log("*".repeat(arr[i]))
+                    }
+                }
+            }
+            
+            let y = [4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"]
+            better_draw_stars(y)
+
+        </script>
+    </head>
+    <body>
+    
+    </body>
+</html>

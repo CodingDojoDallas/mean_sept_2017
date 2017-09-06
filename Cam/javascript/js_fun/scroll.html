@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Javascript Demo</title>
+		<style>
+			body {
+				background-color:black;
+				font-family: monospace;
+				color:white;
+				font-size:50px;
+				text-align: center;
+				margin-top:20%;
+			}
+			#magic{
+				color: #777;
+				border-right: 1px solid #777;
+				padding-right: 7px;
+				display: inline;
+			}
+		</style>
+	</head>
+	<body>
+		Coding is <div id="magic"></div>
+
+		<script>
+			var words = ["a lot of fun", "about not giving up", "challenging and empowering", "creative expression", "what I learned at CodingDojo!"],
+				el = document.getElementById('magic'),
+				word_counter = 0,
+				character_counter = 0;
+			function randomColors() {
+	  			return '#' + Math.floor(Math.random() * 16777215).toString(16);
+			}
+			function updateText()
+			{
+				document.getElementById("magic").style.color = randomColors(); //update color at every character
+				if(words[word_counter][character_counter] === " ") { 
+					el.innerHTML = el.innerHTML + "&nbsp";
+					character_counter++;
+				} else { 
+				el.innerHTML = el.innerHTML+words[word_counter][character_counter++];
+				}
+				
+				if(character_counter == words[word_counter].length+1)//get the last character
+				{
+					word_counter++; 	
+					character_counter = 0;
+					el.innerHTML = '';  //set the html to be blank
+					
+					if(word_counter == words.length)
+						word_counter = 0;	
+				}
+			}
+			setInterval(updateText,150);
+		</script>
+
+	</body>
+</html>
