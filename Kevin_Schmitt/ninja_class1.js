@@ -1,11 +1,18 @@
 function Ninja(name){
+    var self = this
     this.name = name;
     this.health = 100;
     var privateSpeed = 3;
     var privateStrength = 3;
+    var privateMethod = function(){
+        console.log(self.name + ' is a Ninja!');
+        console.log(self);
+    }
     this.sayName = function(){
         console.log("Hello my name is " + this.name);
+        privateMethod();
     }
+
     this.showStats = function(){
         console.log('Name: ' + this.name + ", HEALTH: " + this.health + ', SPEED: ' + privateSpeed + ', STRENGTH: ' + privateStrength);
         // console.log("My SPEED is " + privateSpeed);
@@ -28,6 +35,7 @@ ninja1.sayName();
 ninja1.showStats();
 // -> "Name: Hayabusa, Health: 100, Speed: 3, Strength: 3"
 var blue_ninja = new Ninja("Goemon");
+blue_ninja.sayName();
 var red_ninja = new Ninja("Bill Gates");
 red_ninja.punch(blue_ninja);
 // -> "Goemon was punched by Bill Gates and lost 5 Health!"
