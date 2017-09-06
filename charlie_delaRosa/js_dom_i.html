@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Test Page</title>
+    <script type="text/javascript" >
+
+      "use strict";
+
+    </script>
+  </head>
+
+  <body>
+
+    <h1>Students</h1>
+    <ul id="main">
+        <!-- this is empty-->
+    </ul>
+
+  <script>
+
+// function appendList(arr, id){
+//   for (i in arr){
+//     let new_item = document.createElement("li");
+//     new_item.innerHTML = arr[i];
+//     document.getElementById(id).appendChild(new_item);
+//   }
+// }
+//
+// let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+// let target_id = "main";
+// appendList(students, target_id);
+
+function superAppend(arr, element, id){
+  for (i in arr){
+    let new_item = document.createElement(element);
+    new_item.innerHTML = arr[i];
+    document.getElementById(id).appendChild(new_item);
+  }
+}
+
+let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+let target_id = "main";
+superAppend(students, "li", target_id);
+
+  </script>
+  </body>
+</html>
