@@ -24,9 +24,17 @@ let users = {
     ]
  };
 //  console.log('EMPLOYEES')
-for(let user in users){
-    console.log(users[user])
-}
 
+for(key in users){
+    console.log(key)
+    let keyPlus = 0
+    for(let user of users[key]){
+        keyPlus++
+        var nameLength = user.last_name.length + user.first_name.length
+        var nameString = `${keyPlus} - ${user.last_name}, ${user.first_name} - ${nameLength}`
+        console.log(nameString)
+            
+    }
+}
 // console.log('MANAGERS')
 
