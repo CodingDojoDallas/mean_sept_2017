@@ -14,6 +14,12 @@ function Ninja(name){
     this.drinkShake = function(){
         this.health += 10;
     }
+    this.punch = function(x){
+        x.health -= 5;
+    }
+    this.kick = function(x){
+        x.health -= (15*privateStrength);
+    }
 }
 
 var ninja1 = new Ninja("Hyabusa");
@@ -21,3 +27,13 @@ ninja1.sayName();
 // -> "My ninja name is Hyabusa!"
 ninja1.showStats();
 // -> "Name: Hayabusa, Health: 100, Speed: 3, Strength: 3"
+var blue_ninja = new Ninja("Goemon");
+var red_ninja = new Ninja("Bill Gates");
+red_ninja.punch(blue_ninja);
+// -> "Goemon was punched by Bill Gates and lost 5 Health!"
+red_ninja.kick(blue_ninja);
+blue_ninja.showStats();
+
+
+
+
