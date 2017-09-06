@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Math</title>
+</head>
+<body>
+
+<script>
+	//math 1
+	function zero_negativity(arr){
+		let length = arr.length;
+		if (arr.includes(0)){
+		  return false;
+		}
+		else {
+		  return true;
+		}
+	}
+
+	console.log(zero_negativity([1,0,2,4]));
+	console.log(zero_negativity([4,3,7]));
+
+	//math 2
+	function isEven(num){
+		if (num % 2 === 0){
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	console.log(isEven(17));
+	console.log(isEven(16));
+
+	//math 3
+	function howManyEven(arr){
+		let counter = 0;
+		let length = arr.length;
+		for (let i = 0; i < length; i++){
+			if (isEven(arr[i]) == true){
+				counter++;
+			}
+		}
+		return counter;
+	}
+
+	console.log(howManyEven([1,2,3,4]));
+	console.log(howManyEven([1,3,5,7,9]));
+
+	//math 4
+	function create_dummy_array(n){
+		return Array.from({length: n}, () => Math.floor(Math.random() * n));
+	}
+
+	console.log(create_dummy_array(7));
+
+	//math 5
+	function random_choice(arr){
+		let item = arr[Math.floor(Math.random()*arr.length)];
+		return item;
+	}
+
+	console.log(random_choice([1,2,6,8]));
+</script>
+</body>
+</html>

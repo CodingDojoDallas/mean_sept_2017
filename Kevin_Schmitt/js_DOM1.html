@@ -1,0 +1,67 @@
+<!-- <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Students</h1>
+        <ul id="main">
+
+        </ul> 
+    <script>
+        function appendList(arr, id){
+            var i = 0;
+            while(i<arr.length){
+                var node=document.createElement("LI");
+                var textnode=document.createTextNode(arr[i]);
+                node.appendChild(textnode);
+                document.getElementById("main").appendChild(node);
+                i++;
+            }
+
+        };
+        let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+        let target_id = "main";
+        appendList(students, target_id);
+    </script>   
+    </body>
+</html> -->
+
+
+
+
+
+
+<html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Document</title>
+        </head>
+        <body>
+            <h1>Students</h1>
+            <ul id="main">
+    
+            </ul> 
+        <script>
+            function superAppendList(arr, id, element){
+                var i = 0;
+                while(i<arr.length){
+                    var node=document.createElement(element);
+                    var textnode=document.createTextNode(arr[i]);
+                    node.appendChild(textnode);
+                    document.getElementById("main").appendChild(node);
+                    i++;
+                }
+                
+            };
+            let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+            let target_id = "main";
+            let element_notation = 'li'
+            superAppendList(students, target_id, element_notation);
+        </script>   
+        </body>
+    </html>
