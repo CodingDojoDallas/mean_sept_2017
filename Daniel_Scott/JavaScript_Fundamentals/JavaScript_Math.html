@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Basics III</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    //JavaScript_Math 1
+      //************************************
+      function zero_negativity(arr){
+        for(let i = 0; i<arr.length; i++){
+          if(arr[i]<0){
+              return 'False';
+          }
+          else {
+            if(arr[i]>0){
+              return 'True';
+            }
+          }
+        }
+      };
+      //************************************
+      //JavaScript_Math 2
+        //************************************
+        function is_even(num){
+            if(num%2==0){
+                return 'True';
+            }
+            else {
+                return 'False';
+              }
+        };
+        //JavaScript_Math 3
+          //************************************
+          function how_many_even(arr){
+            var counter = 0;
+            for(let i =0; i<arr.length; i++){
+              if (is_even(arr[i])=='True' ){
+                counter +=1
+              }
+            }
+            return counter;
+          };
+          //JavaScript_Math 4
+            //************************************
+            function create_dummy_array(n){
+              var arr = [];
+              for(let i=0; i<=n; i++){
+                arr.push(Math.floor(Math.random()*10));
+              }
+              return arr;
+            };
+            console.log(create_dummy_array(5));
+            //************************************
+            //JavaScript_Math 5
+              //************************************
+              function random_choice(arr){
+                let randomNum = Math.floor(Math.random()*arr.length);
+                  return arr[randomNum];
+              };
+              console.log(random_choice([2,5,8,1]));
+
+
+    </script>
+
+  </body>
+</html>
