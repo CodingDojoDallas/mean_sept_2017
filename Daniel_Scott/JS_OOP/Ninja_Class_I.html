@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Class I</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function Ninja(name){
+      //atributes
+      this.name =name;
+      this.health =100;
+      this.speed = 3;
+      this.strength = 3;
+      this.sayName = function(){
+        console.log("Hello my name is " + this.name);
+      }
+      this.showStats = function(){
+        console.log(this.name + " currently has " + this.strength + " Strength, and " + this.health + " Health");
+      }
+      this.drinkSake = function(){
+        this.health+=10;
+        console.log(this.name + " drinks sake and health increased to " + this.health)
+      }
+
+    };
+
+    </script>
+
+  </body>
+</html>

@@ -8,14 +8,13 @@
       <h1>Students</h1>
       <ul id="main">
           <!-- this is empty-->
-
       </ul>
   <script>
       function appendList(array, id){
-        let new_Student = document.createElement("li");
-          for(let i=0; i<arr.length; i++){
-            new_Student.innerHTML = arr[i];
-            document.getElementById("main").appendChild(new_Student);
+          for(let i=0; i<array.length; i++){
+            let new_student = document.createElement("li");
+            new_student.innerHTML = array[i];
+            document.getElementById("main").appendChild(new_student);
           }
       };
       let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
