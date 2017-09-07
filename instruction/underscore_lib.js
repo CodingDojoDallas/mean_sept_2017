@@ -22,3 +22,4 @@ var _ = {
 var result = _.map([1,2,3], function(num){ return num * num })
 var result2 = _.reduce([100,22,30000], function(memo, num){ return memo + num })
 console.log(result2);
+console.log(result);
