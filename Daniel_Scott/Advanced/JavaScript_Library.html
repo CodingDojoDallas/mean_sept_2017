@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Library</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var _ = {
+      map: function(array, callback) {
+            for(let i=0; i<array.length; i++){
+               array[i] = callback(array[i]);
+            }
+            return array;
+           },
+      reduce: function(array, callback, num) {
+            for(let i=0; i<array.length; i++){
+              num+=array[i];
+            }
+            return num;
+           },
+      find: function(array, callback) {
+            for(let i=0; i<array.length; i++){
+              if(callback(array[i])){
+                return array[i];
+              }
+            }
+           },
+      filter: function(array, callback) {
+            var newArr = [];
+            for(let i=0; i<array.length; i++){
+                if(callback(array[i])){
+                  newArr.push(array[i]);
+              }
+            }
+            return newArr;
+           },
+      reject: function(array, callback) {
+        var newArr = [];
+        for(let i=0; i<array.length; i++){
+            if(callback(array[i])){
+              newArr.push(i);
+          }
+        }
+        return newArr;
+           }
+         };
+
+        // var test = _.map([1, 2, 3], function(num){ return num * 3; });
+        //    console.log(test);
+        // var sum = _.reduce([1, 2, 3], function(memo, num){ return memo + num; }, 0);
+        // console.log(sum);
+        // var even = _.find([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+        // console.log(even);
+        // var evens = _.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+        // console.log(evens);
+        // var odds = _.reject([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+        // console.log(odds)
+
+    </script>
+
+  </body>
+</html>
