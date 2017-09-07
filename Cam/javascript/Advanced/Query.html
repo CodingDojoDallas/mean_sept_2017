@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Query</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <h1>Query</h1>
+            <ul>
+                <li>Click the button.</li>
+                <li>Hover on and off the button..</li>
+            </ul>
+
+            <p><button id="button">Have fun!</button></p>
+        </div>
+        <script>
+
+            function $Query(id) {
+
+                this.myId = document.getElementById(id);
+                //adds the callback to the event listener for the dom element.(i.e. when you "click" a button)
+                this.click = function (callback) {
+                    this.myId.addEventListener("click", callback);
+
+                    return this;
+                };
+
+                this.hover = function (hoverin, hoverout) {
+                    this.myId.addEventListener("mouseover", hoverin);
+                    this.myId.addEventListener("mouseout", hoverout);
+
+                    return this;
+                };
+
+            }
+
+            var myElem = new $Query("button");
+
+            var clickAlert = function() {
+                alert("Yaaaaaaa it works!");
+            };
+
+            // Use the "click" Query method
+            myElem.click(clickAlert); //Add this callback 
+
+
+            var hoverOverChangeColor = function() {
+                console.log("changing the background color!")
+                myElem.myId.style.background = "green";
+            };
+
+            var hoveroutRemoveColor = function() {
+                console.log("removing the background color!")
+                myElem.myId.removeAttribute("style");
+            };
+
+            myElem.hover(hoverOverChangeColor, hoveroutRemoveColor); //adding these callbacks!
+
+        </script>
+    
+    </body>
+</html>

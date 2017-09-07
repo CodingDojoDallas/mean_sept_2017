@@ -35,10 +35,36 @@ class Superhero extends Person {
 
 
 
-var person = new Person('Cody', 29, 'green');
-var superHero = new Superhero('Cody', 29, 'green', 'flight', 'Codysseus')
-console.log(superHero.sayMyName());
+// var person = new Person('Cody', 29, 'green');
+// var superHero = new Superhero('Cody', 29, 'green', 'flight', 'Codysseus')
+// console.log(superHero.sayMyName());
 
+
+//es6
+class People {
+    constructor(name) {
+        var _name = name;
+        this.name = name;
+        this.setName = function(name) { _name = name; }
+        this.getName = function() { return _name; }
+        console.log(this);
+    }
+    getName2(){
+    	console.log(_name);
+    }
+}
+
+var x = new People('Cody');
+console.log(x.name);
+
+// function People(name){
+// 	var _name = name;
+
+// 	this.getName = function(){
+// 		console.log(_name);
+// 	}
+
+// }
 
 
 

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Github name</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <button id="getName">My name on Github is?</button>
+        <h1 id='name'></h1>
+    </body>
+    <script>
+        var button = document.getElementById("getName")
+        button.addEventListener("click", updateName);
+
+        function updateName() { $.get("https://api.github.com/users/cmarsh940", displayName)
+        
+            function displayName(data) {
+                console.log(data)
+                console.log(data.name) //=> Cam 
+                let nameHeader = document.getElementById('name')
+                console.log(nameHeader)
+                nameHeader.innerHTML = data.name
+
+            }
+        }
+    </script>
+</html>
