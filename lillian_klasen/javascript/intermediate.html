@@ -1,0 +1,49 @@
+<html>
+<body>
+<script>
+
+// part 1
+
+function starString(number) {
+    var string = '';
+    for (var i = 0; i < number; i++) {
+        string += "*";
+    }
+    return string;
+}
+
+// part 2
+
+// function drawStars(array) {
+//     for (var i = 0; i < array.length; i++) {
+//       console.log(starString(array[i]));
+//   }
+// }
+
+// part 3
+
+function drawStars(array) {
+    for (var i = 0; i < array.length; i++) {
+        if (typeof array[i] == "number") {
+            console.log(starString(array[i]));
+        }
+
+        else if (typeof array[i] == "string") {
+            var word = array[i];
+            var length = array[i].length;
+            var letters = '';
+
+            for (var i = 0; i < length; i++) {
+            letters += word[0].toLowerCase();
+            }
+            console.log(letters);
+        }
+    }
+}
+
+let x = [4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"];
+console.log(drawStars(x));
+
+</script>
+</body>
+</html>

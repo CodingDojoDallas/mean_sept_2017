@@ -1,0 +1,61 @@
+<html>
+<body>
+<script>
+
+// math 1
+
+function zero_negativity(array) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] > 0) {
+            continue;
+        }
+        else {
+            return false;
+        }
+    }
+    return true;
+}
+
+// math 2
+
+function is_even(number) {
+    if (number % 2 == 0) {
+        return true;
+    }
+
+    else {
+        return false;
+    }
+}
+
+// math 3
+
+function how_many_even(array) {
+    var count = 0;
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] % 2 == 0) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// math 4
+
+function create_dummy_array(n) {
+    let array = [];
+    for (var i = 0; i < n; i++) {
+        array.push(Math.floor(Math.random() * n))
+    }
+    return array;
+}
+
+// math 5
+
+function random_choice(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
+
+</script>
+</body>
+</html>
