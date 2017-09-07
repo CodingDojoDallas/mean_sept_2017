@@ -31,6 +31,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [ES6 Cheatsheet](https://github.com/DrkSephy/es6-cheatsheet "ES6 Cheatsheet") <br>
 [JavaScript Promises: an Introduction](https://developers.google.com/web/fundamentals/getting-started/primers/promises "JavaScript Promises: an Introduction") <br>
 [ExpressJS Documentation](http://expressjs.com/en/api.html "ExpressJS Documentation") <br>
+[NPM Documentation](https://docs.npmjs.com/ "NPM Documentation") <br>
 
 # Schedule
 
