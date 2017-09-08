@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Form</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Fill out the form</h1>
+		<form action="/login" method="post">
+			<div>
+				<label>Your Name</label>
+				<input type="text" name="name">
+			</div>
+			<div>
+				<label>Dojo Location:</label>
+				<select name="location">
+					<option>Dallas</option>
+					<option>DC</option>
+					<option>Seattle</option>
+					<option>Mountain View</option>
+					<option>Online</option>
+				</select>
+			</div>
+			<div>
+				<label>Favorite Language:</label>
+				<select name="language">
+					<option>Java</option>
+					<option>Python</option>
+					<option>JavaScript</option>
+					<option>Ruby</option>
+					<option>PHP</option>
+				</select>
+			</div>
+			<div>
+				<label>Comment:</label>
+				<textarea name="comment"></textarea>
+			</div>
+			<input type="submit" value="Login">
+		</form>
+	</div>
+</body>
+</html>
