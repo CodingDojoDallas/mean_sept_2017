@@ -33,6 +33,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [JavaScript Promises: an Introduction](https://developers.google.com/web/fundamentals/getting-started/primers/promises "JavaScript Promises: an Introduction") <br>
 [ExpressJS Documentation](http://expressjs.com/en/api.html "ExpressJS Documentation") <br>
 [NPM Documentation](https://docs.npmjs.com/ "NPM Documentation") <br>
+[Express-Session Documentation](https://github.com/expressjs/session "Express-Session Documentation") <br>
 
 # Schedule
 
