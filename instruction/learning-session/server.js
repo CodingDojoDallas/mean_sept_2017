@@ -26,10 +26,6 @@ app.get('/', (req, res) => {
 	return res.render('index')
 })
 
-let myobj = {}
-myobj.this = 'that'
-myobj.nextThing = 'more stuff'
-
 app.get('/showUser', (req, res) => {
 	// if(!req.session.isLoggedIn){
 	// 	res.redirect('/')
