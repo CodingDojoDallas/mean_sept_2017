@@ -18,17 +18,23 @@ app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'ejs');
 
 // root route to render the index.ejs view
-var count = 0;
 app.get('/', function(req, res) {
-  req.session.count = count++;
- res.render("index",{counter: req.session.count});
+  if (req.session.count){
+    req.session.count++;
+  }
+  else{
+    req.session.count = 1;
+  }
+  res.render("index",{session: req.session});
 })
+
 app.get('/add_two', function(req, res){
-  count++;
+    req.session.count++; //adds 2 to visit count with addition of redirect to '/'
   res.redirect('/');
 })
+
 app.get('/reset', function(req, res){
-  count=0;
+  req.session.count = 0;
   res.redirect('/');
 })
 
