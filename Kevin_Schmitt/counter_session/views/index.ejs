@@ -8,9 +8,17 @@
     </head>
     <body>
         <div class="container">
-            <h3>HELLO INDEX.EJS</h3>
-
+            <h1>Counter</h1>
+            <h2><%= count %></h2>
+            <form method='post' action='/addone'>
+                <input type="submit" value='Add 2'>
+            </form>
+            <p></p>
+            <form method='post' action='/reset'>
+                <input type="submit" value='Reset'>
+            </form>
         </div>
+
         
 
 
