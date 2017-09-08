@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hunting Github</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<script>
+		$.get("https://api.github.com/users/charissayj", displayName)
+		//displayName is a callback
+		function displayName(data){
+			console.log(data);
+			//on click
+			//append information to HTML page
+		}
+	</script>
+</body>
+</html>

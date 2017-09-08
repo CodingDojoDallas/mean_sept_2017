@@ -28,24 +28,6 @@
 			}
 		}
 
-		//Part 2 - sensei class
-		class Sensei extends Ninja{
-			constructor(name){
-				super(name);
-			}
-
-			speakWisdom(){
-				console.log("Sage old man gives pithy message");
-			}
-			showStats(){
-				let message = super.showStats();
-			}
-		}
-
-		let super_sensei = new Sensei("Master Splinter");
-		super_sensei.speakWisdom();
-		super_sensei.showStats();
-
 		//example outputs
 		var ninja1 = new Ninja("Tashi");
 		console.log(ninja1.sayName());
