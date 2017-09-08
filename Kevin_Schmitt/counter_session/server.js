@@ -40,7 +40,23 @@ app.get('/', (request, response) => {
 // app.get('/nextPage', function(req, res) {
 //     res.render("nextpage.ejs");
 // })
+app.post('/addone', (req, res)  => {
+    // take data from form
+    // form data is always available at req.body
+    req.session.count++
+    console.log(req.session.count);
+    return res.redirect('/')
+    // save it into session
+})
 
+app.post('/reset', (req, res)  => {
+    // take data from form
+    // form data is always available at req.body
+    req.session.count = 0
+    console.log(req.session.count);
+    return res.redirect('/')
+    // save it into session
+})
 
 
 

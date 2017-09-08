@@ -9,8 +9,16 @@
     <body>
         <div class="container">
             <h1>Counter</h1>
-            <%= count %>
+            <h2><%= count %></h2>
+            <form method='post' action='/addone'>
+                <input type="submit" value='Add 2'>
+            </form>
+            <p></p>
+            <form method='post' action='/reset'>
+                <input type="submit" value='Reset'>
+            </form>
         </div>
+
         
 
 
