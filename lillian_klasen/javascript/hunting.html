@@ -1,0 +1,29 @@
+<html>
+<body>
+
+<button id="github">Get GitHub Info</button>
+
+<div id="showstuff"></div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+
+var button = document.getElementById("github");
+button.addEventListener("click", whatToDoOnClick);
+
+function whatToDoOnClick() {
+
+    $.get("https://api.github.com/users/lillianklasen", displayName)
+    // Notice that displayName is a function that takes in 1 parameter (this is the data that comes back from the API)
+    function displayName(data) {
+      console.log(data);
+      var html_str = "";
+      html_str += "<h4>" + data['login'] + "</h4>";
+      $('#showstuff').html(html_str);
+    }
+}
+
+</script>
+</body>
+</html>

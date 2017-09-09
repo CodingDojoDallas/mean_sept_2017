@@ -1,0 +1,23 @@
+<html>
+<body>
+<script>
+
+function fib() {
+  var n = 0;
+  function nacci() {
+    total = n + fib(n - 1)
+    console.log(total)
+  }
+  return nacci
+}
+var fibCounter = fib();
+fibCounter() // should console.log "1"
+fibCounter() // should console.log "1"
+fibCounter() // should console.log "2"
+fibCounter() // should console.log "3"
+fibCounter() // should console.log "5"
+fibCounter() // should console.log "8"
+
+</script>
+</body>
+</html>
