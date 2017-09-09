@@ -1,0 +1,9 @@
+*{
+    color: green;
+}
+
+.container{
+    width: 48%;
+    border: 3px solid grey;
+    text-align: center;
+}

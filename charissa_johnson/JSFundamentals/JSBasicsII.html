@@ -7,20 +7,27 @@
 
 <script>
 	function magic_multiply(x, y){
+		if (x === 0 && y === 0){
+			return "All inputs are 0";
+		}
+
 		if (x.constructor === Array){
 			for (let i = 0; i < x.length; i++){
-				console.log((x[i] * y));
-				//x = x[i] * y;
+				x[i] = x[i] * y;
 			}
+
+			return x;
 		}
-		else if (y.constructor === String){
+		if (y.constructor === String){
 			return ("Error: Can not multiply by string");
 		}
 
-		else if (x.constructor === String){
-			for (let i = 1; i < y; i++){
-				console.log(x);
+		if (x.constructor === String){
+			let new_string = "";
+			for (let i = 0; i < y; i++) {
+				new_string += x;
 			}
+			return new_string;
 		}
 
 		return x * y;
