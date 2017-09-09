@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Survey Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Submitted Information</h3>
+      <p><%=session.name%></p>
+      <p><%=session.location%></p>
+      <p><%=session.language%></p>
+      <p><%=session.comments%></p>
+      <form action="/index" method="get">
+        <div class="form-control">
+          <input type="submit" value="Go Back">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
