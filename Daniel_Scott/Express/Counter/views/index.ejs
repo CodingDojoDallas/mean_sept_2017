@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>You've been to this page</h1>
+      <p><%= session.count %> : Times</p>
+    </div>
+    <form class="" action="/reset" method="get">
+      <div class="form-group">
+        <input type="submit" value="reset">
+      </div>
+    </form>
+    <form class="" action="/timesTwo" method="get">
+      <div class="form-group">
+        <input type="submit" value="Count by Two">
+      </div>
+    </form>
+  </body>
+</html>
