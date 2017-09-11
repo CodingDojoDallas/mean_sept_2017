@@ -1,0 +1,157 @@
+<!--Assignment: Deck of Cards
+Create a Deck class. A deck should have the following functionality:
+
+The Deck should contain the 52 standard cards
+The Deck should be able to shuffle (https://bost.ocks.org/mike/shuffle/)
+The Deck should be able to reset
+The Deck should be able to deal a random card
+Deal should return the card that was dealt and remove it from the deck
+Now create a Player class. A Player should have the following functionality:
+
+The Player should have a name
+The Player should have a hand
+The Player should be able to take a card (use the deck.deal method)
+The Player should be able to discard a card
+Optional:
+
+Create a blackjack game with your deck of cards!
+A deck of card image set can be found here
+
+Or Unicode them Unicode for card images (https://en.wikipedia.org/wiki/Playing_cards_in_Unicode)!-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        
+
+        // ======= ES5 =======
+
+        // var Deck = function Deck(){
+        //     this.deck = [];
+        // };
+
+        // Deck.prototype.reset = function(){
+        //     this.deck = [];
+        //     var suits = ['Clubs', 'Hearts', 'Diamonds', 'Spades'];
+        //     var pips = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
+
+        //     for(var suit in suits){
+        //         for(var pip in pips){
+        //             this.deck.push(pips[pip] + " of " + suits[suit]);
+        //         }
+        //     }
+
+        //     return this;
+        // };
+
+        // Deck.prototype.shuffle = function(){
+        //     var m = this.deck.length, t, i;
+        //     while (m) {
+        //         i = Math.floor(Math.random() * m--);
+        //         t = this.deck[m];
+        //         this.deck[m] = this.deck[i];
+        //         this.deck[i] = t;
+        //     }
+        //     return this;
+        // }
+
+        // Deck.prototype.deal = function(){
+        //     return this.deck.pop();
+        // }
+
+        // var Player = function Player(name){
+        //     this.name = name;
+        //     this.hand = [];
+        // }
+
+        // Player.prototype.draw = function(deck){
+        //     this.hand.push(deck.deal());
+        //     return this;
+        // }
+
+        // Player.prototype.discard = function(){
+        //     this.hand.pop();
+        //     return this;
+        // }
+
+        // var deck1 = new Deck();
+        // deck1.reset().shuffle();
+        // console.log(deck1);
+
+        // var player1 = new Player("Nina");
+        // player1.draw(deck1).draw(deck1);
+        // console.log(player1);
+
+
+        // ======== ES6 =========
+
+        class Deck {
+            constructor(){
+                this.deck = [];
+            }
+
+            reset(){
+                this.deck = [];
+                let suits = ['Clubs', 'Hearts', 'Diamonds', 'Spades'];
+                let pips = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
+
+                for(let suit in suits){
+                    for(let pip in pips){
+                        this.deck.push(pips[pip] + " of " + suits[suit]);
+                    }
+                }
+
+                return this;
+            }
+
+            shuffle(){
+                let m = this.deck.length, t, i;
+                while (m) {
+                    i = Math.floor(Math.random() * m--);
+                    t = this.deck[m];
+                    this.deck[m] = this.deck[i];
+                    this.deck[i] = t;
+                }
+                return this;
+            }
+
+            deal(){
+                return this.deck.pop();
+            }
+
+        }
+
+        class Player {
+            constructor(name){
+                this.name = name;
+                this.hand = [];
+            }
+
+            draw(deck){
+                this.hand.push(deck.deal());
+                return this;
+            }
+
+            discard(){
+                this.hand.pop();
+                return this;
+            }
+        }
+
+        let deck2 = new Deck();
+        deck2.reset().shuffle();
+        console.log(deck2);
+
+        let player2 = new Player("Ronnel");
+        player2.draw(deck2).draw(deck2);
+        console.log(player2);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
