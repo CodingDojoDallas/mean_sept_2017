@@ -38,6 +38,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Express-Session Documentation](https://github.com/expressjs/session "Express-Session Documentation") <br>
 [Socket.IO Documentation](https://socket.io/docs/ "Socket.IO Documentation") <br>
 [MongoDB Documentation](https://docs.mongodb.com/manual/ "MongoDB Documentation") <br>
+[Mongoose Documentation](http://mongoosejs.com/docs/api.html "Mongoose Documentation") <br>
 
 # Schedule
 
