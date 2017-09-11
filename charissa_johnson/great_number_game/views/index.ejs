@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Great Number Game</title>
+</head>
+<body>
+	<h1>Welcome to the great number game!</h1>
+	<p>I am thinking of a number between 1 and 100</p>
+	<p>Take a guess!</p>
+
+	<form action="/user_guess" method="post">
+		<input type="text" name="guess"/>
+		<button type="submit">Submit</button>
+	</form>
+
+	<p><%= session.guess %></p>
+	<% var num = Math.floor(Math.random()*100); %>
+	<% if (session.guess == num) { %>
+		<p>You guessed it!</p>
+	<% } %>
+	<% if (session.guess < num) { %>
+		<p>Too low!</p>
+	<% } %>
+	<% if (session.guess > num) { %>
+		<p>Too high!</p>
+	<% } %>
+</body>
+</html>
