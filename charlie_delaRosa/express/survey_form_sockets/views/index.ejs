@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Survey Form</title>
+    <!-- <link rel="stylesheet" href="/stylesheets/style.css"/> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type = "text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+      //this triggers the connection event in our server!
+      var socket = io.connect();
+      //we'll write all the socket stuff after the above line!
+      $('#survey_form').submit(function(e) {
+        e.preventDefault();
+        socket.emit("posting_form", {
+          name: $('#name').val(),
+          location: $('#location').val(),
+          fav_lang: $('#fav_lang').val(),
+          comment: $('#comment').val()
+        });
+      });
+      //display the emit response of the server called "updated_message" and "random_number"
+      socket.on('updated_message', function (data){
+          $('#message').html("You emitted the following information to the server: " + JSON.stringify(data.response));
+      });
+      socket.on('random_number', function (data){
+         $('#number').html("Your lucky number emitted by the server is : " + JSON.stringify(data.response));
+      });
+      
+    });
+    </script>
+  </head>
+  <body>
+    <h1>Survey Form</h1>
+    <div id="message"></div>
+  	<div id="number"></div>
+    <form id="survey_form" action="" method="post">
+      <table>
+        <tr>
+          <td><label for="">Name:</label></td>
+          <td><input type="text" name="name" id="name"></td>
+        </tr>
+        <tr>
+          <td><label for="">Dojo Location:</label></td>
+          <td><select id="location" name="location">
+            <option value="Seattle">Seattle</option>
+            <option value="Dallas">Dallas</option>
+            <option value="San Jose">San Jose</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td><label for="">Favorate Language:</label></td>
+          <td><select id="fav_lang" name="fav_lang">
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="Ruby">Ruby</option>
+            <option value="Java">Java</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td><label for="">Comment (optional):</label></td>
+        </tr>
+        <tr>
+          <td><textarea name="comment" id="comment" rows="4" cols="25"></textarea></td>
+        </tr>
+        <tr>
+          <td><input type="submit" name="submit" value="Submit"></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
