@@ -1,0 +1,31 @@
+<html>
+<script>
+
+
+</script>
+
+<body>
+
+<h1>Welcome to the Great Number Game</h1>
+
+<br>
+<br>
+
+<p>I am thinking of a number between 1 and 100</p>
+<p>Take a guess!</p>
+
+<h1> <%= message %> </h1>
+
+<br>
+
+<form action='/guess' method='post'>
+    <input type='text' name='guess'>
+    <input type='submit' value='Submit'>
+</form>
+
+<form action='/reset' method='post'>
+    <input type='submit' value='Reset Game'>
+</form>
+
+</body>
+</html>
