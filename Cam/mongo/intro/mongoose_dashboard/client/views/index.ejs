@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Otter Dashboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <h1 class="text-center">Welcome to otter Dashboard!</h1>
+        <div class="container">
+            <table class="table-striped col-10">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Created At</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% for (var i = 0; i < otters.length; i++) { %>
+                    <tr>
+                        <td><a href="/otters/<%= otters[i]._id %>"><%= otters[i].name %></a></td>
+                        <td><%= otters[i].createdAt.toDateString() %></td>
+                        <td><a href="/otters/edit/<%= otters[i]._id%>">Edit</a>, 
+                        <form action="/otters/destroy/<%= otters[i]._id%>" method='post'>
+                            <input type='submit' value='Remove'>
+                        </form>
+                        </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <a href="/otters/new">Add a new otter!</a>
+        </div>
+    </body>
+</html>
