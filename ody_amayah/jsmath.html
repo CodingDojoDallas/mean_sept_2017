@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Javascript Math</title>
+  <script>
+    // Math 1
+    function zero_negativity(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    // Math 2
+    function is_even(num) {
+      if (num % 2 == 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    // Math 3
+    function how_many_even(arr) {
+      let sum = 0;
+      for (let i = 0; i < arr.length; i++) {
+        if (is_even(arr[i])) {
+          sum += 1;
+        }
+      }
+      return sum;
+    }
+
+    // Math 4
+    function create_dummy_array(num) {
+      let arr = [];
+      for (let i = 0; i < num; i++) {
+        arr.push(Math.floor(Math.random() * 10));
+      }
+      return arr;
+    }
+
+    // Math 5
+    function random_choice(arr) {
+      let index = Math.floor(Math.random() * arr.length);
+      return arr[index];
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
