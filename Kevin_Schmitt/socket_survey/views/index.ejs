@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel='stylesheet' type='text/css' href='style.css'>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script src="socket.js"></script>
+        <title>Socket Survey</title>
+    </head>
+    <body>
+        <!-- <div>
+            <button id='newEvent'>Emit an event</button>
+        </div> -->
+        <div id="notes">
+
+        </div>
+        <div>
+            <!-- <form>
+                <div>
+                    <label>Name</label>
+                    <input id='name' type="text" name="name">
+                </div>
+                <input type="submit" value="Submit">
+            </form> -->
+            <form>
+                <div>
+                    <label>Your Name:</label>
+                    <input id='name' type="text" name="name">
+                </div>
+                <div>
+                    <label>Dojo Location:</label>
+                    <select id='location' name="location">
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="Mountain View">Mountain View</option>
+                        <option value="Dallas">Dallas</option>
+                        <option value="Seattle">Seattle</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Favorite Language:</label>
+                    <select id='language' name="language">
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="Python">Python</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Ruby">Ruby</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Comment (Optional):</label>
+                    <textarea id='comment' name='comment'></textarea>
+                </div>
+                <input type="submit" value='Submit!'>
+            </form>
+        </div>
+    </body>
+</html>
