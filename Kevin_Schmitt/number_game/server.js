@@ -26,45 +26,17 @@ app.use(session({
 
 
 
+
 // routes
 app.get('/', (request, response) => {
-    if(!request.session.count){
-        request.session.count = 1;
-    }
-    else{
-        request.session.count++;
-    }
-    response.render("index.ejs", {count: request.session.count});
+    response.render("index.ejs");
 })
-// app.get('/nextPage', function(req, res) {
-//     res.render("nextpage.ejs");
-// })
-app.post('/addone', (req, res)  => {
-    // take data from form
-    // form data is always available at req.body
-    req.session.count++
-    console.log(req.session.count);
+
+app.post('/guess', (req, res)  => {
+    var num = Math.floor((Math.random() * 100) + 1);
+    
     return res.redirect('/')
-    // save it into session
 })
-
-app.post('/reset', (req, res)  => {
-    // take data from form
-    // form data is always available at req.body
-    req.session.count = 0
-    console.log(req.session.count);
-    return res.redirect('/')
-    // save it into session
-})
-
-
-
-
-
-
-
-
-
 
 // always goes at the bottom
 app.listen(port, () => {
