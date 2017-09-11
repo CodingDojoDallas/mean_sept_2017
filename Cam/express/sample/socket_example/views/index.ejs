@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type ='text/javascript' src="/socket.io/socket.io.js"></script>
+        <script type ='text/javascript'>
+            $(document).ready(function(){
+                var socket = io.connect();
+                $('button').click(function(e) {
+                    e.preventDefault()
+                    console.log("you clicked the button!")
+                    socket.emit("posting_form",
+                     {
+                        name: $('#name').val(),
+                        location: $('#location').val(),
+                        language: $('#language').val(),
+                    }
+                 );
+                    socket.emit("random_number", 
+                    {
+                        message: "yo it's me",
+
+                    }
+                 );
+                }); //multiple emits in one click!
+
+                socket.on('updated_message', function(data){
+                    console.log('The server says: ' + data.name , data.location , data.language )
+                    var result = document.getElementById("result")
+                    result.innerHTML = "You emitted the following information to the server! Name: "
+                    result.innerHTML += data.name
+                    result.innerHTML += ". Location: " + data.location + ". Language: " + data.language
+                    
+                })
+                socket.on('updated_number', function(data){
+                    console.log('This was your random number ' + data.number)
+                    var result = document.getElementById("random_number")
+                    result.innerHTML = "Your lucky number is... " + data.number + "!!!"
+                    
+                })
+            });
+        </script>
+
+    </head>
+    <body>
+        <div id='result'>
+
+        </div>
+        <div id='random_number'>
+        </div>
+        <form id='user_form'>
+            <label for='name'>Name: </label>
+            <input id='name' name='name'>
+            <label for='location'>Location: </label>
+            <select id='location' name='location'>
+                <option value='San Jose'>San Jose</option>
+            </select>
+            <label for='language'>Language: </label>
+            <select id='language' name='language'>
+                <option value='Python'>Python</option>
+            </select>
+            <button>Watch the sockets in action!</button>
+        </form>
+    
+    </body>
+</html>
