@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Otter Dashboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Edit a otter here!</h2>   
+            <h3>Name: <%= otters.name %></h3>
+            <h4>Description: <%= otters.description %></h4>
+            <h5>Created At: <%= otters.createdAt %></h5> 
+             <% if(typeof(errors) != 'undefined' ) { %>
+                <% for (var x in errors) { %>
+                <h3><%= errors[x].message %></h3>
+                <% } %>
+            <% } %>
+
+            <form action="/otters/<%= otters._id %>" method='post'>
+                <label for='name'>Edit Name: </label>
+                <input name='name' id='name' type='text' value="<%= otters.name %>">
+
+                <label for='description'>Edit Description: </label>
+                <textarea name='description' id='description'><%= otters.description %></textarea>
+                
+                <input type='submit' value='Edit this otter!'>
+
+
+            </form>
+        </div>
+    </body>
+</html>
