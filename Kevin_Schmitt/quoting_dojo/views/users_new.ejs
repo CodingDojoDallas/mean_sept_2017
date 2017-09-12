@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel='stylesheet' type='text/css' href='style.css'>
+        <title>new user</title>
+    </head>
+    <body>
+        <form action="/users" method='post'>
+            <div>
+                <label>Name</label>
+                <input type="text" name='name'>
+            </div>
+            <div>
+                <label>Age</label>
+                <input type="number" name='age' step='1'>
+            </div>
+            <div>
+                <label>Message</label>
+                <textarea name="msg" cols="30" rows="10"></textarea>
+            </div>
+            <input type="submit" value='Add User'>        
+        </form>
+        <% for(let user of users) { %>
+            <p><%= user.msg %></p>
+            <p><%= user.name %> -- <%= user.createdAt %></p>
+            <hr>
+        
+        <% } %>
+
+
+    </body>
+</html>
