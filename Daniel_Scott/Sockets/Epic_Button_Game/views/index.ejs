@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Great Number Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <script type ="text/javascript">
+       $(document).ready(function (){
+         // triggers the connection event in our server!
+           var socket = io.connect();
+         })
+         </script>
+  </head>
+  <body>
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-xs-4">
+                <button class="btn btn-primary btn-xlg" type="button">Push the Epic Button</button>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
