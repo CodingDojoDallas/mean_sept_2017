@@ -1,6 +1,6 @@
 $(function(){
 	let socket = io.connect();
-	$('#newEvent').click( ()=>{ 
+	$('#newEvent').click( () => { 
 		socket.emit('button_clicked', { msg: 'I was sent from the client' })
 	})
 	//listener

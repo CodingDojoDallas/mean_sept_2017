@@ -5,9 +5,10 @@ let port = 8000;
 let app = express();
 
 //middleware
-app.use(express.static(__dirname + '/static'))
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
+
+app.use(express.static(__dirname + '/static'))
 app.use(session({
 	secret: 'as;ldkfjas;dfklj',
 	resave: false,
