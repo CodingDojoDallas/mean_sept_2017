@@ -30,6 +30,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [MEAN - MongoDB](https://youtu.be/MS_2jZwxx10  "MEAN - MongoDB") <br>
 [MEAN - Mongoose Basic Queries](https://youtu.be/d_OmGNflnro  "MEAN - Mongoose Basic Queries") <br>
 [MEAN - Mongoose Associations and Advanced Queries](https://youtu.be/VTdMQLKO-BQ  "MEAN - Mongoose Associations and Advanced Queries") <br>
+[MEAN - Modularizing Server-Side Code](https://youtu.be/OnBRbBWQqaY "MEAN - Modularizing Server-Side Code") <br>
 
 # Resources
 [MDN JavaScript Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript "MDN JavaScript Documentation") <br>
