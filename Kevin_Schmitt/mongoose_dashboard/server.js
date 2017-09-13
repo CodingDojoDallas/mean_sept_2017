@@ -31,7 +31,7 @@ let UserSchema = new mongoose.Schema({
     },
     age: {
         type: Number,
-        min: [1, 'Age must be greater than one']
+        min: [1, 'Age must be greater than zero']
     },
     animal: {
         type: String,
@@ -89,6 +89,7 @@ app.post('/create', (req, res) =>{
         }
         return res.redirect('/show')
     }) 
+    // cleaner code would use the following!!
     // User.create(req.body, (err, user) => {
     //     if(err){
     //         console.log(err)
@@ -114,7 +115,7 @@ app.post('/edit/:id',(req, res) => {
     })
 })
 app.post('/destroy/:id',(req, res) => {
-    // ...delete 1 record by a certain key/vaue.
+    // ...delete 1 record by a certain key/value.
     User.remove({_id: req.params.id}, function(err){
     // This code will run when the DB has attempted to remove one matching record to {_id: 'insert record unique id here'}
     })

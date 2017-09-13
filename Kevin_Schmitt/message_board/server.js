@@ -75,8 +75,12 @@ app.get('/', (req, res) => {
 })
 
 app.post('/login', (req, res) => {
+	console.log('test')
 	console.log(req.body);
+
 	User.findOne({ name: req.body.name }, (err, user) => {
+		console.log('err: ', err)
+		console.log('user:', user)
 		if(err){
 			console.log('err: ', err);
 		}
