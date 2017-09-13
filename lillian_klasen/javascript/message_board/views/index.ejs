@@ -21,11 +21,12 @@
 <p>Message: <%= messages[x].message  %></p>
 <hr>
 
-<% for (var comment in messages[x].comments) { %>
+<% messages[x].comments.forEach(function(comment) { %>
+<p>comment: <%= comment  %></p>
 <p>Name: <%= comment.name  %></p>
 <p>Comment: <%= comment.comment  %></p>
 <hr>
-<% } %>
+<% }) %>
 
 <form action='/comments/<%= messages[x].id %>' method='post'>
     Name: <input type='text' name='name'>

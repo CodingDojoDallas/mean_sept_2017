@@ -33,6 +33,9 @@ app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
     Message.find({}).populate('comments').exec(function(err, messages) {
+        for (i in messages) {
+     console.log(messages[i].comments);
+}
         res.render('index', {messages: messages});
     })
 })
@@ -54,20 +57,23 @@ app.post('/messages', function (req, res) {
 })
 
 app.post('/comments/:id', function (req, res) {
-    Message.findOne({_id: req.params.id}), function(err, message){
+    console.log("inside the findOne");
+    Message.findOne({_id: req.params.id}, function(err, message){
         var comment = new Comment(req.body);
         comment._message = message._id;
-        message.comments.push(comment);
+
         comment.save(function(err){
-            if(err) {
-                console.log('error');
-            }
-            else {
-                console.log(comment);
-                res.redirect('/');
-            }
+            message.comments.push(comment);
+            message.save(function(err){
+                if(err) {
+                    console.log('error');
+                }
+                else {
+                    res.redirect('/');
+                }
+            })
         })
-    }
+    })
 })
 
 app.listen(8000, function() {
