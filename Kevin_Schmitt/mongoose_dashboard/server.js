@@ -54,6 +54,7 @@ app.get('/show', (req, res) => {
     User.find({}).sort('-createdAt').exec((err, users) =>{
         if(err){
             // console.log(err);
+            res.render('users_show', { users:users })
         } else{
             // console.log(users);
             res.render('users_show', { users:users })
@@ -87,7 +88,14 @@ app.post('/create', (req, res) =>{
             console.log(user);
         }
         return res.redirect('/show')
-    })    
+    }) 
+    // User.create(req.body, (err, user) => {
+    //     if(err){
+    //         console.log(err)
+    //         return res.redirect('/show')
+    //     }
+    //     return res.redirect('/show')        
+    // })   
 })
 app.post('/edit/:id',(req, res) => {
     User.findById(req.params.id, (err, user) => {
