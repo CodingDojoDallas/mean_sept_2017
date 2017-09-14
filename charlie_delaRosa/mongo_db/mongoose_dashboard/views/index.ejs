@@ -1,0 +1,26 @@
+<h1>Welcome to the Doggy Dashboard!</h1>
+<a href="/new">Register a Dog</a>
+<h2>Here are our dogs!</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Color</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Favorite Activity</th>
+    <th>Action</th>
+  </tr>
+
+  <% for (dog of dogs) { %>
+  <tr>
+    <td><a href= "/<%=dog._id%>"><%=dog.name%></a></td>
+    <td><%=dog.color%></td>
+    <td><%=dog.gender%></td>
+    <td><%=dog.age%></td>
+    <td><%=dog.fav_activity%></td>
+    <td><form class="" action="/<%=dog._id%>/destroy" method="post">
+      <input type="submit" name="submit" value="Delete">
+    </form></td>
+  </tr>
+  <% } %>
+</table>
