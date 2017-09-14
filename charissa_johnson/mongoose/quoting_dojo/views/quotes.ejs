@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quotes</title>
+</head>
+<body>
+	<a href="/">Home</a>
+	<% for (var i of quotes) { %>
+    	<h3>Author: <%= i.name %></h3>
+    	<p>Quote: <%= i.quotes %></p>
+  	<% } %>
+</body>
+</html>

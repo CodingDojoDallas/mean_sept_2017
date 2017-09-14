@@ -30,6 +30,9 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [MEAN - MongoDB](https://youtu.be/MS_2jZwxx10  "MEAN - MongoDB") <br>
 [MEAN - Mongoose Basic Queries](https://youtu.be/d_OmGNflnro  "MEAN - Mongoose Basic Queries") <br>
 [MEAN - Mongoose Associations and Advanced Queries](https://youtu.be/VTdMQLKO-BQ  "MEAN - Mongoose Associations and Advanced Queries") <br>
+[MEAN - Modularizing Server-Side Code](https://youtu.be/OnBRbBWQqaY "MEAN - Modularizing Server-Side Code") <br>
+[MEAN - Task-API Demo](https://youtu.be/A98CsLuoTtY "MEAN - Task-API Demo") <br>
+[MEAN - Login & Registration](https://youtu.be/MY1xq-otIX0 "MEAN - Login & Registration") <br>
 
 # Resources
 [MDN JavaScript Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript "MDN JavaScript Documentation") <br>
@@ -42,6 +45,10 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [Socket.IO Documentation](https://socket.io/docs/ "Socket.IO Documentation") <br>
 [MongoDB Documentation](https://docs.mongodb.com/manual/ "MongoDB Documentation") <br>
 [Mongoose Documentation](http://mongoosejs.com/docs/api.html "Mongoose Documentation") <br>
+[BcryptJS Documentation](https://www.npmjs.com/package/bcryptjs "BcryptJS Documentation") <br>
+[TypeScript Documentation](https://www.typescriptlang.org/docs/home.html "TypeScript Documentation") <br>
+[Angular Documentation](https://angular.io/docs "Angular Documentation") <br>
+[Why TypeScript with Angular?](https://vsavkin.com/writing-angular-2-in-typescript-1fa77c78d8e8 "Why TypeScript with Angular?") <br>
 
 # Schedule
 

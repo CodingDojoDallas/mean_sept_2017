@@ -103,14 +103,7 @@ app.get('/dashboard', (req, res) => {
 	if(!req.session.user_id){
 		return res.redirect('/');
 	}
-	Post.find({}).populate('user').populate({
-		path: 'comments',
-		model: 'Comment',
-		populate: {
-			path: 'user',
-			model: 'User'
-		}
-	}).exec((err, posts) => {
+	Post.find({}).sort('-createdAt').exec((err, posts) => {
 		if(err){
 			console.log(err);
 		} else {
