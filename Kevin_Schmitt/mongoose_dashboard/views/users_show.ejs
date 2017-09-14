@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- <link rel='stylesheet' type='text/css' href='style.css'> -->
+        <title>new user</title>
+    </head>
+    <body>
+        <h1>All my animals</h1><form action='/'>
+            <input type="submit" value='Add Animal'>
+        </form>
+        <% for(let user of users) { %>
+            <p><%= user._id %> -- <a href='<%= user._id %>'><%= user.name %></a> -- <%= user.animal %> -- <%= user.age %></p>
+            <form action='/destroy/<%= user._id %>' method='post'>
+                <input type="submit" value='Delete'>
+            </form>
+            <hr>
+        
+        <% } %>
+
+
+    </body>
+</html>
