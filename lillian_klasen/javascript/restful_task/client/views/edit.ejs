@@ -1,0 +1,21 @@
+<h2>Editing task</h2>
+
+<form action='/tasks/<%= task.id %>/update' method='post'>
+    Title: <input type='text' name='title' value="<%= task.title %>">
+    <br>
+    <br>
+    Description: <input type='text' name='description' value="<%= task.description %>">
+    <br>
+    <br>
+    Completed:
+    <input type='checkbox' name='completed' value='yes'>Yes
+    <br>
+    <br>
+    <input type='submit' value='Update Task'>
+</form>
+<br>
+<br>
+<h2>Or delete the task...</h2>
+<form action='/tasks/<%= task.id %>/delete' method='post'>
+    <input type='submit' value='Delete'>
+</form>

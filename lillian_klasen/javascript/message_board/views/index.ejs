@@ -1,0 +1,43 @@
+<h1>The Dojo Message Board</h1>
+<hr>
+
+<form action='/messages' method='post'>
+    Name: <input type='text' name='name'>
+    <br>
+    <br>
+    Message:
+    <br>
+    <textarea name='message'></textarea>
+    <br>
+    <br>
+    <input type='submit' value='Post message'>
+</form>
+
+<br>
+<br>
+
+<% for (var x in messages) { %>
+<p>Name: <%= messages[x].name  %></p>
+<p>Message: <%= messages[x].message  %></p>
+<hr>
+
+<% messages[x].comments.forEach(function(comment) { %>
+<p>comment: <%= comment  %></p>
+<p>Name: <%= comment.name  %></p>
+<p>Comment: <%= comment.comment  %></p>
+<hr>
+<% }) %>
+
+<form action='/comments/<%= messages[x].id %>' method='post'>
+    Name: <input type='text' name='name'>
+    <br>
+    <br>
+    Comment:
+    <br>
+    <textarea name='comment'></textarea>
+    <br>
+    <br>
+    <input type='submit' value='Post comment'>
+</form>
+<hr>
+<% } %>
