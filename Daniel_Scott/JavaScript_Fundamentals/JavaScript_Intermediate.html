@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Intermediate</title>
+  </head>
+  <body>
+<img src="" alt="">
+    <script type="text/javascript">
+      // Part I
+      function starString(num) {
+        string = "";
+        for(let i=0; i<num; i++){
+          string+='*';
+        }
+        return string;
+      };
+      console.log(starString(8));
+
+      let stars = starString(8);
+      console.log(stars);
+    // Part II
+    function starString(num) {
+      string = "";
+      for(let i=0; i<num; i++){
+        string+='*';
+      }
+      return string;
+    };
+
+    function draw_stars(arr){
+      for(let i=0; i<arr.length; i++){
+        console.log(starString(arr[i]));
+      }
+      return arr;
+    };
+    console.log(draw_stars([4, 6, 1, 3, 5, 7, 25]));
+  // Part III
+  function star_string(num){
+    let new_str = "";
+    for(let i = 0; i<num; i++){
+      new_str += "*";
+    }
+    return new_str;
+  };
+
+
+  function draw_stars(arr){
+    let new_arr = [];
+    for(let i = 0; i<arr.length; i++){
+      if(typeof arr[i] === 'number'){
+        new_arr.push(star_string(arr[i]))
+      }else if(typeof arr[i] === 'string'){
+        let new_str = "";
+        for(let j = 0; j < arr[i].length; j++){
+          new_str += arr[i][0].toLowerCase();
+        }
+        new_arr.push(new_str);
+      }
+    }
+    return new_arr;
+  }
+
+    </script>
+
+  </body>
+</html>

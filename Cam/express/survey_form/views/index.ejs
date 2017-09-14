@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Survey Form</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<form action="/result" method="post">
+			<div class="form-group">
+				<label for="name">Your Name:</label><input type="text" name="name" placeholder="Your name" />
+			</div>
+			<div class="form-group">
+			<label for="location">Dojo Location:</label>
+				<select name="location">
+					<option value="mountain">Mountain View</option>
+					<option value="dallas">Dallas</option>
+					<option value="washington">Washington</option>
+					<option value="sanjose">San Jose</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="location">Favorite Language:</label>
+				<select name="language">
+					<option value="node">Node</option>
+					<option value="express">Express</option>
+					<option value="angular">Angular</option>
+					<option value="electron">Electron</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label>Comment (optional):</label>
+					<textarea name="comment"></textarea>
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+</body>
+</html>

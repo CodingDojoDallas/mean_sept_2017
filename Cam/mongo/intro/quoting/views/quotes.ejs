@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h2>This is the quotes page!</h2>
+        <% for (var i = 0; i < quotes.length; i++) { %>
+            <p> <%= quotes[i].quote %> -- <%= quotes[i].name %>, <%= quotes[i].createdAt %></p> 
+        <% } %>
+
+        <button> <a href="/">Back</a></button>
+    </body>
+</html>

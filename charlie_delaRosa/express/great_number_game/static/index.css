@@ -1,0 +1,8 @@
+.feedback {
+height: 250px;
+width: 250px;
+background-color: red;
+color: white;
+text-align: center;
+vertical-align: middle;
+}

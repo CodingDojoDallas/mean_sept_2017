@@ -1,0 +1,30 @@
+<h1>Dog Edit Page</h1>
+<button type="button" name="button"><a href="/<%=dog._id%>">Back to Profile</a></button>
+
+<form class="" action="/<%=dog._id%>" method="post">
+  <table>
+    <tr>
+      <td><label for="">Name:</label></td>
+      <td><input type="text" name="name" value="<%=dog.name%>"></td>
+    </tr>
+    <tr>
+      <td><label for="">Color:</label></td>
+      <td><input type="text" name="color" value="<%=dog.color%>"></td>
+    </tr>
+    <tr>
+      <td><label for="">Gender:</label></td>
+      <td><input type="text" name="gender" value="<%=dog.gender%>"></td>
+    </tr>
+    <tr>
+      <td><label for="">Age:</label></td>
+      <td><input type="number" name="age" value="<%=dog.age%>"></td>
+    </tr>
+    <tr>
+      <td><label for="">Favorite Activity:</label></td>
+      <td><input type="text" name="fav_activity" value="<%=dog.fav_activity%>"></td>
+    </tr>
+    <tr>
+      <td><input type="submit" name="submit" value="Update Profile"></td>
+    </tr>
+  </table>
+</form>

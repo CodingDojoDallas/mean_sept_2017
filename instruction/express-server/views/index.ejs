@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title></title>
+</head>
+<body>
+	<div class="container">
+		<% for(let user of users) { %>
+			<p><%= user.id %> - <%= user.name %></p>
+		<% } %>
+		<div>
+			<form action="/users" method="post">
+				<div>
+					<label>Name</label>
+					<input type="text" name="name">
+				</div>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

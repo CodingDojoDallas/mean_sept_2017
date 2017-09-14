@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Basics 1</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    //Basic I
+    //************************************
+    let x = [];
+    console.log(x);
+    x.push('coding', 'dojo', 'rocks');
+    x.pop()
+    console.log(x);
+    //final value of x is ['coding', 'dojo', 'rocks']
+    //************************************
+
+    //Basic II
+    //************************************
+    const y = [];
+    y.push(88);
+    console.log(y);
+    //final value of y is [88]
+    //************************************
+
+    //Basic III
+    //************************************
+    //This will print all of the values in the array
+    let z = [9, 10, 6, 5, -1, 20, 13, 2];
+    for(let i=0; i<z.length; i++){
+      console.log(z[i]);
+    }
+    // This will print all of the values except for the last value in the array
+    let z = [9, 10, 6, 5, -1, 20, 13, 2];
+    for(let i=0; i<z.length-1; i++){
+      console.log(z[i]);
+    }
+    //************************************
+
+    //Basic 4
+    //************************************
+    var names = ['kadie', 'joe', 'fritz', 'pierre', 'Alphonso'];
+    var namesCount = [];
+    for (let i = 0; i<names.length; i++){
+      namesCount.push(names[i].length);
+    }
+    console.log(namesCount);
+    //This program will return: [ 5, 3, 5, 6, 8 ]
+
+    var names = ['kadie', 'joe', 'fritz', 'pierre', 'Alphonso'];
+    var fiveCount = []
+    for (let i = 0; i<names.length; i++){
+    if (names[i].length==5){
+      fiveCount.push(names[i]);
+      }
+    }
+    console.log(fiveCount);
+    //This program will print out only the names with a length of 5
+    //************************************
+
+    //Basic 5
+    //************************************
+    function yell(string){
+      return string.toUpperCase();
+    };
+    console.log(yell('hello world'));
+    //************************************
+
+    </script>
+
+  </body>
+</html>

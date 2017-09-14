@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>show one</title>
+    </head>
+    <body>
+        <p>Name: <%= user.name %></p>
+        <p>Age: <%= user.age %></p>
+        <p>Animal: <%= user.animal %></p>
+        <form action="edit/<%= user._id %>" method='post'>
+            <div>
+                <label>Name</label>
+                <input type="text" name='name'>
+            </div>
+            <div>
+                <label>Age</label>
+                <input type="number" name='age' step='1'>
+            </div>
+            <div>
+                <label>Animal</label>
+                <input type="text" name='animal'>
+            </div>
+            <input type="submit" value='Update User'>        
+        </form>
+    </body>
+</html>

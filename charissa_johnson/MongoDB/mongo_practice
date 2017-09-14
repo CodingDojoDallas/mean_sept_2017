@@ -1,0 +1,24 @@
+1. db.createCollection('my_first_db')
+2. db.createCollection("students")
+3. db.students.insert({
+... name: "Tashi Johnson",
+... home_state: "WA",
+... lucky_number: 7,
+... birthday: {month: 12, day: 09, year: 1989}
+... })
+4. db.students.find{home_state: "WA"}
+5. db.students.find({lucky_number: {$gt: 3}})
+6. db.students.find({lucky_number: {$lte: 10}})
+7. db.students.find( { $and: [ { lucky_number: { $gt: 1 } }, { lucky_number: { $lt: 9 } } ] } )
+8. db.students.update({},{$set: {"interests":['coding', 'brunch', 'MongoDB']}},{multi:true})
+9. db.students.update({name: "Tashi"}, {$push: {interests:{$each:['rapping]}}})
+10. db.students.update({name: "Banana"}, {$pull: {interests:{$each:['taxes']}}})
+11. db.students.update({name: "Banana"},{$pull: {interests: "taxes"}})
+12. db.students.remove({$or: [{home_state:"California"}, {home_state:"Washington"}]})
+13. db.students.remove({name:"Banana"})
+14. db.students.remove({lucky_number: {$gt:5}}, {justOne:true})
+15. db.students.update({},{$set: {"number_of_belts":0}},{multi:true})
+16. db.students.update({home_state: "Washington"},{$inc: {number_of_belts: 1}},{multi:true})
+17. db.students.update({}, {$rename: {"number_of_belts":"belts_earned"}})
+18. db.students.update({}, {$unset:{lucky_number:""}},{multi:true})
+19. db.students.update({}, {$currentDate:{updated_on:true}},{multi:true})

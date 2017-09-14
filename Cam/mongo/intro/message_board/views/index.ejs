@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Welcome to Message Board!</h1>
+        <hr>
+
+         <% if(typeof(errors) != 'undefined' ) { %>
+            <% for (var x in errors) { %>
+            <h3><%= errors[x].message %></h3>
+            <% } %>
+        <% } %>
+
+        <form action='/messages' method='post'>
+            <label for='name'>Name: </label>
+            <input type='text' name='name' id='name'>
+
+            <label for='message'>Message: </label>
+            <textarea id='message' name='message'></textarea>
+
+            <input type='submit' value='Leave Message!'>
+
+        </form>
+
+        <% for (var i = 0; i < posts.length; i++) { %>
+            <h3>Name: <%= posts[i].name %></h3>
+            <h5>Id: <%= posts[i]._id %></h5>
+            <p>Message: <%= posts[i].text %></p>
+            <% for (var j = 0; j < posts[i].comments.length; j++) { %>
+                <h4>Name: <%= posts[i].comments[j].name %></h4>
+                <p>Comment: <%= posts[i].comments[j].text %></p>
+            <% } %>
+            <h6>Leave a comment!</h6>
+            <form action="/comments/<%= posts[i]._id %>" method='post'>
+
+                <label for='name'>Name: </label>
+                <input type='text' name='name' id='name'>
+            
+                <label for='comment'>Comment: </label>
+                <textarea id='comment' name='comment'></textarea>
+                <input type='submit' value='Comment'>
+
+            </form>
+        <% } %>
+
+    
+    </body>
+</html>

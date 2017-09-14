@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div>
+		<a href="/users/new">Add a User</a>
+	</div>
+	<div>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Age</th>
+			</tr>
+			<% for(let user of users) { %>
+				<tr>
+					<td><a href="users/<%= user._id %>"><%= user.name %></a></td>
+					<td><%= user.email %></td>
+					<td><%= user.age %></td>
+				</tr>
+			<% } %>
+		</table>
+	</div>
+
+
+</body>
+</html>

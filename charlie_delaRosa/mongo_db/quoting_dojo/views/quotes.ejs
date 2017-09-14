@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Quotes</title>
+  </head>
+  <body>
+    <h1>Here are the awesome quotes!</h1>
+    <a href="/">Post Another Quote!</a>
+    <table>
+      <% for(quote of quotes) { %>
+        <tr>
+          <td><%=`"${quote.quote}"`%></td>
+        </tr>
+        <tr>
+          <td><%=`- ${quote.name} at ${quote.createdAt}`%></td>
+        </tr>
+      <% } %>
+    </table>
+  </body>
+</html>

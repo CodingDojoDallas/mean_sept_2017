@@ -1,0 +1,14 @@
+<h1>Editing <%= puppy.name%></h1>
+
+<form action='/puppies/<%=puppy.id %>' method='post'>
+    Name: <input type='text' name='name' value="<%= puppy.name%>">
+    <br>
+    <br>
+    Breed: <input type='text' name='breed' value='<%= puppy.breed%>'>
+    <br>
+    <br>
+    <input type='submit' value='Update Puppy'>
+</form>
+<br>
+<br>
+<a href='/'>Back to puppies</a>

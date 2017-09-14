@@ -1,0 +1,19 @@
+{
+  "name": "The_Epic_Button_Game",
+  "version": "1.0.0",
+  "description": "Express_Game_Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Daniel Scott",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.15.5",
+    "socket.io": "^2.0.3"
+  }
+}

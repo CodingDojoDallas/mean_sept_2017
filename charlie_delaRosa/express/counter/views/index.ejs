@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Counter</h1>
+    <% if (session.count == 1){ %>
+      <h3><%=session.count%> Time</h3>
+    <% }
+    else { %>
+        <h3><%=session.count%> Times</h3>
+    <% } %>
+    <p><a href="/add_two">Add 2</a></p>
+    <p><a href="/reset">Reset</a></p>
+  </body>
+</html>

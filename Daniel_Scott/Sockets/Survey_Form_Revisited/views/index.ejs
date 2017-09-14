@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <title>Survey Form Revisted</title>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+   <script type ="text/javascript">
+       $(document).ready(function (){
+         // triggers the connection event in our server!
+           var socket = io.connect();
+           // submit data to the server using emit
+           $('#survey_form').submit(function(e) {
+                   e.preventDefault();
+                   socket.emit("posting_form", {
+                   name: $('#name').val(),
+                   location: $('#location').val(),
+                   language: $('#language').val(),
+                   comment: $('#comment').val()
+               });
+     });
+         //display the emit response of the server called "updated_message" and "random_number"
+     socket.on('updated_message', function (data){
+         $('#message').html("You emitted the following information to the server: " + JSON.stringify(data.response));
+     });
+     socket.on('random_number', function (data){
+        $('#number').html("Your lucky number emitted by the server is : " + JSON.stringify(data.response));
+     });
+       });
+   </script>
+  </head>
+  <body>
+    <div id="message"></div>
+    <div id="number"></div>
+    <h3>Hello and Welcome to the Dojo Survey Form</h3>
+
+      <form id="survey_form">
+        <p>
+          <label for="name">Name</label>
+          <input id="name"type="text" name="name">
+        </p>
+
+          <p>
+            <label for="location">Dojo Location</label>
+            <select id="location"name="location">
+              <option value="Dallas">Dallas</option>
+              <option value="Seattle">Seattle</option>
+              <option value="California">California</option>
+              <option value="Arizona">Arizona</option>
+            </select>
+          </p>
+
+
+        <p>
+          <label for="language">Favorite Language</label>
+          <select id="language"name="language">
+            <option value="Javascript">JavaScript</option>
+            <option value="Ruby">Ruby</option>
+            <option value="Python">Python</option>
+            <option value="C++">C++</option>
+          </select>
+        </p>
+
+
+    <p>
+      <textarea id="comments"placeholder="Comments (Optional)"name="comments" cols="25" rows="5"></textarea>
+    </p>
+
+
+          <input type="submit"value="Submit">
+
+
+      </form>
+
+  </body>
+</html>

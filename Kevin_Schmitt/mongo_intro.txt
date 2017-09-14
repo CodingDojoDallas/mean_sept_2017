@@ -1,0 +1,68 @@
+use my_first_db
+switched to db my_first_db
+db.createCollection('students')
+{ "ok" : 1 }
+
+db.students.insert({name: 'Bill', home_state: 'Montana', lucky_number: 48, birthday: {month: 6, day: 19, year: 2001}})
+db.students.insert({name: 'Austin', home_state: 'Texas', lucky_number: 21, birthday: {month: 3, day: 21, year: 1988}})
+db.students.insert({name: 'Rachel', home_state: 'Rhode Island', lucky_number: 2, birthday: {month: 1, day: 23, year: 1990}})
+db.students.insert({name: 'Bob', home_state: 'Wisconsin', lucky_number: 101, birthday: {month: 12, day: 2, year: 1993}})
+db.students.insert({name: 'Karen', home_state: 'Kentucky', lucky_number: 88, birthday: {month: 10, day: 31, year: 1995}})
+
+db.students.find().pretty()
+
+db.students.find({ $or: [{home_state:'California'},{home_state:'Washingtion'}]}).pretty()
+
+
+db.students.find({lucky_number:{$gt:3}})
+
+db.students.find({lucky_number:{$lte:10}})
+
+db.students.find( {$and: [{lucky_number:{$gt:1}},{lucky_number:{$lt:9}}] }).pretty()
+
+
+db.students.updateMany( {lucky_number: {$gt:0}},{$set: {interests:['coding','brunch','MongoDB']}})
+
+
+db.students.updateOne( {name:'Bill'},{$set: {interests:['coding','brunch','MongoDB','I love Coding']}})
+db.students.updateOne( {name:'Karen'},{$set: {interests:['coding','brunch','MongoDB','New Interest!!!']}})
+db.students.updateOne( {name:'Bob'},{$set: {interests:['coding','brunch','MongoDB','BasketBall']}})
+db.students.updateOne( {name:'Bob'},{$set: {interests:['coding','brunch','MongoDB','BasketBall']}})
+db.students.updateOne( {name:'Rachel'},{$set: {interests:['coding','brunch','MongoDB','Skiing']}})
+
+
+db.students.updateOne( {name:'Bob'},{$set: {interests:['coding','brunch','MongoDB','BasketBall','Taxes']}})
+
+db.students.updateOne(
+   { name:'Austin' },
+   { $push: { interests: 'Rock Climbing' } }
+)
+db.students.update( { name:'Austin' }, { $pop: { interests: -1 } } )
+
+
+db.students.deleteMany( {home_state:'California'} )
+db.students.deleteMany( {$and: [{home_state:'California'},{home_state:'Washington'}]} )
+
+
+db.students.deleteOne( {name:'Bill'})  
+
+
+db.students.deleteOne({lucky_number:{$gt:5}}) 
+
+
+db.students.updateMany( {lucky_number:{$gt:0}},{$set: {belt_number:0}})
+
+
+db.students.updateMany( {home_state:'Washingtion'},{ $inc: { belt_number: 1} })
+
+
+db.students.updateMany( { lucky_number:{$gt:0} }, { $rename: { 'belt_number': 'earned_belts'} } )
+
+
+db.students.updateMany(
+   { lucky_number:{$gt:0}},
+   { $unset: { lucky_number: ""} }
+)
+
+
+db.students.updateMany({},{ $set: {'updated_on':'9/11/2017'} }, {multi:true})

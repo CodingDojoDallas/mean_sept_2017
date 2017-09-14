@@ -1,0 +1,74 @@
+<html>
+<head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type ="text/javascript">
+
+$(document).ready(function () {
+    var socket = io.connect();
+
+    $('button').click(function () {
+        socket.emit("posting_form",
+             { name: $('#name').val(),
+              location: $('#location').val(),
+              language: $('#language').val(),
+              comment: $('#comment').val(),
+         }
+     );
+        return false;
+    })
+
+    socket.on('updated_message', function (data) {
+        number = Math.floor(Math.random() * 1000);
+        
+        $(".info").append("<p>You entered the following information to the server: {name: '"  + data.name + "', location: '" + data.location + "', language: '" + data.language + "', comment: '" + data.comment + "'} \n\n Your lucky number emitted by the server is " + number + ".</p>");
+    })
+})
+
+</script>
+</head>
+
+<body>
+
+<div class="info">
+</div>
+
+<form action='/survey' method='post'>
+    Your Name: <input type='text' id="name" name='name'>
+
+    <br>
+    <br>
+
+    Dojo Location:
+    <select id="location" name="location">
+        <option value="Seattle">Seattle</option>
+        <option value="Dallas">Dallas</option>
+        <option value="San Jose">San Jose</option>
+    </select>
+
+    <br>
+    <br>
+
+    Favorite Language:
+    <select id="language" name="language">
+        <option value="Python">Python</option>
+        <option value="Ruby">Ruby</option>
+        <option value="Javascript">Javascript</option>
+    </select>
+
+    <br>
+    <br>
+
+    Comment (optional):
+    <br>
+    <textarea id="comment" name="comment"></textarea>
+
+    <br>
+    <br>
+
+    <button>Submit</button>
+</form>
+
+</body>
+</html>

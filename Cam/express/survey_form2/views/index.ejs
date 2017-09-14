@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type ='text/javascript' src="/socket.io/socket.io.js"></script>
+        <script type ='text/javascript'>
+            $(document).ready(function(){
+                var socket = io.connect();
+                $('button').click(function(e) {
+                    e.preventDefault()
+                    socket.emit("posting_form", {
+                        name: $('#name').val(),
+                        location: $('#location').val(),
+                        language: $('#language').val(),
+                        comment: $('#comment').val(),
+                    });
+                    socket.emit("random_number", {
+                        message: "You now have a lucky number!!"
+
+                    });
+                }); //multiple emits in one click!
+
+                socket.on('updated_message', function(data){
+                    var result = document.getElementById("result")
+                    result.innerHTML = "You emitted the following information to the server! Name: "
+                    result.innerHTML += data.name
+                    result.innerHTML += ". Location: " + data.location + ". Language: " + data.language + ". Comment: " + data.comment
+                })
+                socket.on('updated_number', function(data){
+                    var result = document.getElementById("random_number")
+                    result.innerHTML = "Your lucky number emitted by the server is " + data.number + "."             
+                })
+            });
+        </script>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="alert alert-success" role="alert">
+                <div id='result'></div>
+                <div id='random_number'></div>
+            </div>
+            <form id='user_form'>
+                <div class="form-group">
+                    <label for='name'>Name: </label>
+                    <input id='name' name='name'>
+                </div>
+                <div class="form-group">
+                    <label for='location'>Location: </label>
+                    <select id='location' name='location'>
+                        <option value='san_jose'>San Jose</option>
+                        <option value='dallas'>Dallas</option>
+                        <option value='washington'>Washington</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for='language'>Language: </label>
+                    <select id='language' name='language'>
+                        <option value='javacript'>Javascript</option>
+                        <option value='Python'>Python</option>
+                        <option value='ruby'>Ruby</option>
+                        <option value='c'>C</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Comment (optional):</label>
+                    <textarea id="comment" name="comment"></textarea>
+                </div>
+                <button>Submit</button>
+            </form>
+        </div>
+    </body>
+</html>

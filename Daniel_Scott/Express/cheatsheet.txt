@@ -1,0 +1,15 @@
+Create a directory that will be used to hold your project
+
+install packages
+
+npm install --save express ejs body-parser express-session
+
+let express = require('express');
+let bodyparser = require('body-parser');
+let session = require('express-session');
+let port = 8000;
+let app = express();
+app.set('view engine', 'ejs');
+app.set('views', __dirname + "/views")
+app.use(express.static(__dirname + '/static'));
+ap.listen(port,()) => console.log('listening on port ${port}');

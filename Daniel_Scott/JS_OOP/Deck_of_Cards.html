@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Deck of Cards</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    class Card {
+      constructor(suit, value) {
+        this.suit = suit;
+        this.value = value;
+      }
+    };
+
+
+    class Deck{
+      constructor(){
+        this.cards = [];
+        var suits = ['spades', 'hearts', 'diamonds', 'clubs'];
+        var values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J','Q', 'K', 'A' ];
+        for(let suit of suits ){
+          for(let value of values){
+            this.cards.push(new Card(suit, value));
+          }
+        }
+      }
+      shuffle() {
+        var m = this.cards.length, t, i;
+
+        // While there remain elements to shuffle…
+        while (m) {
+
+          // Pick a remaining element…
+          i = Math.floor(Math.random() * m--);
+
+          // And swap it with the current element.
+          t = this.cards[m];
+          this.cards[m] = this.cards[i];
+          this.cards[i] = t;
+        }
+        console.log('deck is shuffled');
+        return this.cards;
+      }
+    };
+     let new_deck = new Deck();
+
+    console.log(new_deck.shuffle());
+    </script>
+
+  </body>
+</html>

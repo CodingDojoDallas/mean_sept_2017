@@ -1,0 +1,11 @@
+<h1>PUPPIES!</h1>
+
+<% for (var puppy in puppies) { %>
+<p>Name: <%= puppies[puppy].name  %></p>
+<p>Breed: <%= puppies[puppy].breed %></p>
+<a href="/puppies/<%= puppies[puppy].id %>">Tell me more about this pupper</a>
+<form action='/puppies/destroy/<%= puppies[puppy].id %>' method='post'>
+    <input type='submit' value="Delete Puppy :(">
+</form>
+<hr>
+<% } %>
