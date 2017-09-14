@@ -33,6 +33,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [MEAN - Modularizing Server-Side Code](https://youtu.be/OnBRbBWQqaY "MEAN - Modularizing Server-Side Code") <br>
 [MEAN - Task-API Demo](https://youtu.be/A98CsLuoTtY "MEAN - Task-API Demo") <br>
 [MEAN - Login & Registration](https://youtu.be/MY1xq-otIX0 "MEAN - Login & Registration") <br>
+[MEAN - TypeScript & Angular Intro](https://youtu.be/WT7T_LehrK8 "MEAN - TypeScript & Angular Intro") <br>
 
 # Resources
 [MDN JavaScript Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript "MDN JavaScript Documentation") <br>
