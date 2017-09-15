@@ -1,11 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+// implements OnInit
+export class AppComponent  {
+  // ngOnInit(arr){
+  //   console.log('executes this code when the component is generated');
+  //   for (let i = arr.length; i; i--) {
+  //       let j = Math.floor(Math.random() * i);
+  //       [arr[i - 1], arr[j]] = [arr[j], arr[i - 1]];
+  //   }
+  //   //shuffle the array
+  //   this.ngOnInit(this.colors)
+  // }
   users:any[] = [
     {
       email: 'bill@gates.com',
@@ -31,5 +41,10 @@ export class AppComponent {
       subject: 'HL3!',
       content: 'Just Kidding...'
     },
-  ]
+  ];
+  colors:string[] = [
+    '#56c6a0', '#0b00c8', '#519395', '#82b382', '#6cfe1c'
+  ];
+  num:number = Math.floor(Math.random() * this.colors.length)
+  Math = Math
 }
