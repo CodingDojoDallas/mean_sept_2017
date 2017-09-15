@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Edit Your Animal</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1>Edit <%=animal.name%></h1>
+      <form action="/<%=animal.id%>" method="post">
+        <div class="form-group">
+          <input type="text" name="type" value="<%=animal.type%>">
+        </div>
+        <div class="form-group">
+          <input class="btn btn-md btn-primary"type="submit" value="Edit Animal">
+        </div>
+      </form>
+          <a class="btn btn-md btn-primary"href="/">Back to Dashboard</a>
+    </div>
+  </body>
+</html>

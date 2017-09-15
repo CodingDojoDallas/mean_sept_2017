@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Here are the Quotes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <h1>Here are the quotes</h1>
+    <% for (var i in quotes) { %>
+  <h3>Author: <%= quotes[i].name %></h3>
+  <p>Quote: <%= quotes[i].quote %></p>
+    <% } %>
+    <button class="btn btn-md btn-success"><a style="text-decoration: none; color: white;"href="/">Add a New Quote</a></button>
+  </body>
+</html>
