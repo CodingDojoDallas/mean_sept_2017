@@ -1,0 +1,30 @@
+<div>
+  {{ doSomething() }}
+  <p>{{ current_user | json }}</p>
+</div>
+<table [ngClass]="{ 'green': mySwitch, 'red': !mySwitch }">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{ user.name }}</td>
+    <td>{{ user.email }}</td>
+  </tr>
+</table>
+<div>
+  <form>
+    <div>
+      <label>Name</label>
+      <input type="text" name="name" [value]="current_user.name">
+    </div>
+    <input type="text">
+  </form>
+</div>
+<div *ngIf="mySwitch" [ngStyle]="myDefaultStyle">
+  <h1>My Secret Thing</h1>
+</div>
+<div>
+  <button (click)="activateSwitch()">Make it disappear</button>
+</div>
+<app-hello-component></app-hello-component>
