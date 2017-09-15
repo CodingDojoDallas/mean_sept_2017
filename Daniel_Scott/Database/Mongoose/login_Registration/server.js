@@ -23,5 +23,5 @@ require('./server/config/routes')(app);
 
 // Tell the app to listen on port
 app.listen(port, ()=>{
-  console.log('Server is locked and loaded on port: '+port+'. . .');
+  console.log(`Server is locked and loaded on port: ${port}. . .`);
 })
