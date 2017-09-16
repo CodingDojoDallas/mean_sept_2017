@@ -1,8 +1,15 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 let UserSchema = new mongoose.Schema({
     name: {
         type: String,
+    },
+    alias: {
+        type: String,
+    },
+    age: {
+        type: Number,
     },
     email: {
         type: String,
@@ -11,5 +18,10 @@ let UserSchema = new mongoose.Schema({
         type: String,
     }
 }, { timestamps: true});
+
+UserSchema.methods.authenticater = function(password){
+    return bcrypt.compareSync(password, this.password);
+}
+
 
 mongoose.model('User', UserSchema);
