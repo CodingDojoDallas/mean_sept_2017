@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="container">
+        {{ today | date:'short' }}
         <H1>Register</H1>
         <div class="register">
             <form action="/users" method='post'>
