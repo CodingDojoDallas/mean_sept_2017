@@ -1,5 +1,5 @@
 <div class="form" style="text-align:center">
-  <div *ngIf='bool==true' [ngStyle]='{"text-align":"center","color":"white","background":"green","width":"300px","height":"200px"}'>Thank you for registering with us {{ users[users.length-1].name }}. We just sent you a confirmation email at {{ users[users.length-1].email }}, and we will send all mail to {{ users[users.length-1].address }}.<p>Have a wonderful day!</p></div>
+  <div *ngIf='bool==true' [ngStyle]='{"text-align":"center","color":"white","background":"green","width":"300px","height":"200px"}'>Thank you for registering with us {{ users[users.length-1].name }}. We just sent you a confirmation email at <a href=''>{{ users[users.length-1].email }}</a>, and we will send all mail to {{ users[users.length-1].address }}.<p>Have a wonderful day!</p></div>
   <h1>Register</h1>
   <form (submit)='submitForm()' #formData='ngForm'>
     <div>

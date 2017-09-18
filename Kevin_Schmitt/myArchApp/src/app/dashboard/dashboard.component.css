@@ -1,0 +1,24 @@
+.wrap{
+    background-color: yellow;
+    width: 98%;
+    height: 10%;
+}
+.lowerHalf{
+    margin-top: 20px;
+    
+}
+.nav{
+    background-color: yellow;
+    margin-right: 30px;
+    width: 20%;
+    height: 700px;
+    display: inline-block;
+    vertical-align: top;
+}
+.main{
+    width: 75%;
+    height: 700px;
+    display: inline-block;
+    background-color: yellow;
+    vertical-align: top;
+}
