@@ -1,0 +1,15 @@
+.switch{
+  width: 75px;
+  height: 75px;
+  display: inline-block;
+}
+button{
+  display: inline-block;
+  background-color: red;
+  width: 75px;
+  height: 75px;
+  display: inline-block;
+}
+button.on{
+  background-color: green;
+}
