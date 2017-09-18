@@ -9,6 +9,11 @@ import { Quote } from '../quote';
 export class QuoteDashboardComponent implements OnInit {
   quotes: Quote[] = [];
 
+  constructor() { }
+
+  ngOnInit() {
+  }
+
   createQuote(newQuote: Quote): void {
     this.quotes.push(newQuote);
   }
@@ -20,12 +25,6 @@ export class QuoteDashboardComponent implements OnInit {
   sortQuotes(): void {
     this.quotes.sort(compare);
   }
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }
 
 function compare(a: Quote, b: Quote): number {

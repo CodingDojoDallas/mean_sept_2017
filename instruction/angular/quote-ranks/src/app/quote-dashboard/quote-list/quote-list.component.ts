@@ -14,17 +14,17 @@ export class QuoteListComponent implements OnInit {
 
   @Output() sortQuotesEvent = new EventEmitter();
 
+  constructor() { }
+
+  ngOnInit() {
+  }
+
   destroyQuote(quote: Quote): void {
     this.destroyQuoteEvent.emit(quote);
   }
 
   sortQuotes(): void {
     this.sortQuotesEvent.emit();
-  }
-
-  constructor() { }
-
-  ngOnInit() {
   }
 
 }

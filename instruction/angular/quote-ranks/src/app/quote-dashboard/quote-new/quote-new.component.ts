@@ -12,14 +12,15 @@ export class QuoteNewComponent implements OnInit {
 
   newQuote: Quote = new Quote();
 
+  constructor() { }
+
+  ngOnInit() {
+  }
+
   createQuote(): void {
     this.createQuoteEvent.emit(this.newQuote);
     this.newQuote = new Quote();
   }
 
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }
