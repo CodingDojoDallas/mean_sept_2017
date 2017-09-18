@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mongoose Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+  <div class="container">
+    <h3>You're on the Dashboard</h3>
+    <table class="table-striped col-10">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Added</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i = 0; i<animals.length; i++){ %>
+        <tr>
+          <td><a href="/animals/<%=animals[i]._id%>"><%=animals[i].name%></a></td>
+          <td><%= animals[i].createdAt.toDateString ()%></td>
+          <td><a href="/animals/edit/<%= animals[i]._id %>">Edit Animal</a></td>
+          <td><form action="/animals/destroy/<%= animals[i]._id %>" method="post">
+                <input class="btn btn-xs btn-danger"type="submit" value="Remove">
+          </form>
+        </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <a href="/animals/new">Add a new Animal!</a>
+  </div>
+  </body>
+</html>
