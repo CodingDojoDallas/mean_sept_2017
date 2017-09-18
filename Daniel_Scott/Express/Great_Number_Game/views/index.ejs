@@ -3,22 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>The Great Number Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
     <div class="container">
       <div class="title">
         <h1>Welcome to the Great Number Game</h1>
-        <p>I'm thinking of a number between 1 and 100</p>
-        <p>take a guess!</p>
-        <p>You guessed: <h3><%=session.number%></h3></p>
+        <p>The computer is thinking of a number between 1 and 100</p>
+        <p>Take a guess!</p>
+        <p>You guessed: <%=session.number%><%=session.message%></p>
       </div>
-      <form class="form-control" action="/guess" method="post">
+      <form action="/guess" method="post">
         <div class="form-group">
           <label for="number"></label>
           <input type="text" name="number">
         </div>
         <div class="form-group">
-          <input type="submit"value="submit">
+          <input class="btn btn-md btn-primary"type="submit"value="submit">
         </div>
       </form>
     </div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>User Form</title>
+  </head>
+  <body>
+    <h1>User Page</h1>
+    <form class="user_form" action="users" method="post">
+      <table>
+        <tr>
+          <td><label for="">Name:</label></td>
+          <td><input type="text" name="name" value=""></td>
+        </tr>
+        <tr>
+          <td><label for="">Age:</label></td>
+          <td><input type="number" name="age" value=""></td>
+        </tr>
+        <tr>
+          <td><input type="submit" name="submit" value="Submit"></td>
+        </tr>
+      </table>
+    </form>
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+      <% for (user of users) {%>
+      <tr>
+        <td><%=user.name%></td>
+        <td><%= user.age%></td>
+      </tr>
+      <% } %>
+    </table>
+  </body>
+</html>

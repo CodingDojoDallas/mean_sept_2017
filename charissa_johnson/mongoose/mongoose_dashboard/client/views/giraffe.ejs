@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Giraffe</title>
+</head>
+<body>
+	<h3>Editing <%= giraffe.name %></h3>
+	<form action="/giraffe/edit/<%= giraffe._id %>" method="post">
+		<label>Change the name to:</label>
+		<input type="text" name="name"/>
+		<input type="submit" value="Edit"/>
+	</form>
+	<a href="/">Nevermind</a>
+</body>
+</html>

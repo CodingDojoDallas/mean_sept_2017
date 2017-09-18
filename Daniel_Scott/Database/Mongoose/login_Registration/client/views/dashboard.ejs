@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>You're on the Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <h2>You are currently logged in as : <%= session.user_id %></h2>
+    <a class="btn btn-sm btn-danger "href="/logout">Logout</a>
+  </body>
+</html>
