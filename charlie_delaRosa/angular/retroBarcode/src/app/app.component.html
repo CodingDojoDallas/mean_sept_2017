@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{title}}
+  </h1>
+</div>
+
+<div class="bar_code_row">
+  <div *ngFor='let color of colors' [ngStyle]="{'background-color': color, 'height': '125px', 'width': '100px', 'display': 'inline-block'}">
+    {{color}}
+  </div>
+</div>
