@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Giraffe Pack</title>
+</head>
+<body>
+	<h1>The Giraffe Pack!</h1>
+
+	<p>Add a giraffe to the giraffe pack!</p>
+
+	<form action='giraffes/new' method="post">
+		<label>Giraffe Name:</label>
+		<input type="text" name="name"/>
+		<input type="submit" value="Yay! A new giraffe!"/>
+	</form>
+	<div>
+		<% for (let giraffe of giraffes ) { %>
+			<p><%= giraffe.name %></p>
+			<a href="/giraffe/<%= giraffe._id %>">Edit</a>
+			<form action="giraffe/<%= giraffe._id %>/delete" method="post">
+			<input type="submit" value="Delete"/>
+			</form>
+			<hr>
+		<% } %>
+	</div>
+</body>
+</html>
