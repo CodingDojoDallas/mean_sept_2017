@@ -37,9 +37,9 @@ export class AppComponent {
   ]
   status = true;
   toggleSwitch(idx):void {
-    if(this.buttons[idx] = 'on'){
+    if(this.buttons[idx] == 'on'){
     this.buttons[idx] = 'off'
-    } else if (this.buttons[idx]='off') {
+    } else if (this.buttons[idx]=='off') {
       this.buttons[idx] = 'on'
     }
   }
