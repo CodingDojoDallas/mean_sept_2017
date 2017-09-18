@@ -22,5 +22,4 @@ export class QuoteNewComponent implements OnInit {
     this.newQuote = new Quote();
   }
 
-
 }

@@ -25,6 +25,7 @@ export class QuoteDashboardComponent implements OnInit {
   sortQuotes(): void {
     this.quotes.sort(compare);
   }
+  
 }
 
 function compare(a: Quote, b: Quote): number {
