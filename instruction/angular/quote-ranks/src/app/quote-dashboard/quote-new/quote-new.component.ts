@@ -10,24 +10,16 @@ export class QuoteNewComponent implements OnInit {
 
   @Output() createQuoteEvent = new EventEmitter();
 
-  newQuote: Quote = {
-    quote: '',
-    author: '',
-    votes: 0
-  };
-
-  createQuote() {
-    this.createQuoteEvent.emit(this.newQuote);
-    this.newQuote = {
-      quote: '',
-      author: '',
-      votes: 0
-    };
-  }
+  newQuote: Quote = new Quote();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  createQuote(): void {
+    this.createQuoteEvent.emit(this.newQuote);
+    this.newQuote = new Quote();
   }
 
 }

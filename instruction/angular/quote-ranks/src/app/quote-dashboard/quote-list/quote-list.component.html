@@ -1,0 +1,7 @@
+<h2>Quotes List</h2>
+<app-quote-single 
+  *ngFor="let quote of quotes; let idx = index"
+  [quote]="quote"
+  [index]="idx"
+  (destroyQuoteEvent)="destroyQuote($event)"
+  (sortQuotesEvent)="sortQuotes($event)"></app-quote-single>

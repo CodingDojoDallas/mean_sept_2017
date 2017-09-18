@@ -1,0 +1,16 @@
+<div class="quote-single-wrapper">
+  <div class="text-wrapper float_left">
+    <p>"{{ quote.quote }}"</p>
+    <p>- {{ quote.author }}</p>
+  </div>
+  <div class="votes-wrapper float_left">
+    <p>{{ quote.votes }}</p>
+  </div>
+  <div class="buttons-wrapper float_left">
+    <p>
+      <button class="vote-button" (click)="increaseVote()">Vote Up</button> 
+      <button class="vote-button" (click)="decreaseVote()">Vote Down</button> 
+      <button class="vote-button" (click)="destroyQuote()">Delete</button> 
+    </p>
+  </div>
+</div>
