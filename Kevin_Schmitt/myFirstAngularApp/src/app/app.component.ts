@@ -57,5 +57,33 @@ export class AppComponent {
     } else if (this.buttons[idx]=='off') {
       this.buttons[idx] = 'on'
     }
+  };
+  clickForm(){
+    console.log('you submitted form!')
   }
+  users = [];
+  newUser:object = {
+    name: '',
+    email: '',
+    address: '',
+    password: '',
+    lucky: '',
+  };
+  resetNewUser(){
+    this.newUser = {
+      name: '',
+      email: '',
+      address: '',
+      password: '',
+      lucky: '',
+    };
+  };
+  submitForm(){
+    this.addToDB();
+    console.log(this.users);
+    this.resetNewUser();
+  };
+  addToDB(){
+    this.users.push(this.newUser);
+  };
 }

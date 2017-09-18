@@ -1,3 +1,44 @@
+<div class="form" style="text-align:center">
+  <h1>Register</h1>
+  <form (submit)='submitForm()' #formData='ngForm'>
+    <div>
+      <label>Name</label>
+      <input type="text" name='name' 
+      [(ngModel)]='newUser.name'
+      required
+      minlength='3'
+      #name='ngModel'>
+      <!-- <p>{{ name.errors | json }}</p>
+      <p>{{ name.touched | json }}</p> -->
+      <p [ngStyle]='{"color":"red"}' *ngIf='name.errors && name.errors.minlength'>Name must be {{ name.errors.minlength.requiredLength }} characters</p>
+      <p [ngStyle]='{"color":"red"}' *ngIf='name.errors && name.errors.required && name.touched'>Name cannot be blank</p>
+    </div>
+    <div>
+      <label>Email</label>
+      <input type="text" name='email' [(ngModel)]='newUser.email'>
+    </div>
+    <div>
+      <label>Address</label>
+      <input type="text" name='address' [(ngModel)]='newUser.address'>
+    </div>
+    <div>
+      <label>Password</label>
+      <input type="password" name='password' [(ngModel)]='newUser.password'>
+    </div>
+    <div>
+      <label>Feeling Lucky?</label>
+      <div>
+      <input type="radio" name='lucky' value='yes' [(ngModel)]='newUser.lucky'>Yes, Lucky<br>
+      <input type="radio" name='lucky' value='no' [(ngModel)]='newUser.lucky'>No, Unlucky<br>
+      </div>
+    </div>
+      <input *ngIf='formData.valid==false' disabled type="submit" value='Submit'>
+      <input *ngIf='formData.valid' (click)="clickForm()" type="submit" value='Submit'>
+  </form>
+  <!-- {{ formData.valid | json }} -->
+  <div *ngFor='let user of users'>{{ user.name }} {{ user.email }} {{ user.lucky }}</div>
+  
+</div>
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1 [ngClass]="{'red':mySwitch, 'green':!mySwitch}">Welcome to {{ name }}'s {{title}}!...</h1>
