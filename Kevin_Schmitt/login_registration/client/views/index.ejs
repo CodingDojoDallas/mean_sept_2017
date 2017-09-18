@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' type='text/css' href='style.css'>
+    <title>login registration</title>
+</head>
+<body>
+    <div class="container">
+        {{ today | date:'short' }}
+        <H1>Register</H1>
+        <div class="register">
+            <form action="/users" method='post'>
+                <div>
+                    <label>Name</label>
+                    <input type="text" name='name'>
+                </div>
+                <div>
+                    <label>Alias</label>
+                    <input type="text" name='alias'>
+                </div>
+                <div>
+                    <label>Age</label>
+                    <input type="number" name='age' step='1'>
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input type="text" name='email'>
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input type="password" name='password'>
+                </div>
+                <input type="submit" value='Register'>
+            </form>
+        </div>
+        <hr>
+        <h1>Login</h1>
+        <div class="login">
+            <form action="/users/authenticate" method='post'>
+                <div>
+                    <label>Email</label>
+                    <input type="text" name='email'>
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input type="password" name='password'>
+                </div>
+                <input type="submit" value='Login'>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
