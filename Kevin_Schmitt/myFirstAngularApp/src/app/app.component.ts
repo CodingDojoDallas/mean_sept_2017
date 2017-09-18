@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FirstAngularApp';
-  name = 'Kevin';
+  namer = 'Kevin';
   birthday = '3/21/1988';
   today = new Date();
   dosomething() {
@@ -16,9 +16,15 @@ export class AppComponent {
   set = 0;
   time = Date.now();
   // time changed by milliseconds (2hrs = 7,200,000 milliseconds)
-  PSTtime = this.time - 7200000;
-  MSTtime = this.time - 3600000;
+  // current_time = Date.now()
+  
+  PSTtime = Date.now() - 7200000;
+  MSTtime = Date.now() - 3600000;
   clear = true;
+
+  // setTime() {
+  //   this.current_time.setHours(this.current_time.getHours() + 1)
+  // }
 
   
   mySwitch:boolean = false;
@@ -78,12 +84,21 @@ export class AppComponent {
       lucky: '',
     };
   };
+
+  bool = false;
+
   submitForm(){
     this.addToDB();
     console.log(this.users);
     this.resetNewUser();
+    this.bool = true;
   };
+
   addToDB(){
     this.users.push(this.newUser);
   };
+
+  resetDiv(){
+    this.bool = false;
+  }
 }
