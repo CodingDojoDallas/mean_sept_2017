@@ -14,28 +14,29 @@ export class QuoteSingleComponent implements OnInit {
 
   @Output() destroyQuoteEvent = new EventEmitter();
 
+  @Output() sortQuotesEvent = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
-    console.log(this.index);
   }
 
-  increaseVote() {
+  increaseVote(): void {
     this.quote.votes++;
-    // set of an event emitter
+    this.sortQuotesEvent.emit();
   }
 
-  decreaseVote() {
-    if (this.quote.votes < 2){
+  decreaseVote(): void {
+    if (this.quote.votes < 2) {
       this.quote.votes = 0;
     } else {
       this.quote.votes--;
     }
+    this.sortQuotesEvent.emit();
   }
 
-  destroyQuote() {
-    // set off an event emitter
-    this.destroyQuoteEvent.emit(this.index);
+  destroyQuote(): void {
+    this.destroyQuoteEvent.emit(this.quote);
   }
 
 }

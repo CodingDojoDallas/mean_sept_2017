@@ -10,19 +10,11 @@ export class QuoteNewComponent implements OnInit {
 
   @Output() createQuoteEvent = new EventEmitter();
 
-  newQuote: Quote = {
-    quote: '',
-    author: '',
-    votes: 0
-  };
+  newQuote: Quote = new Quote();
 
-  createQuote() {
+  createQuote(): void {
     this.createQuoteEvent.emit(this.newQuote);
-    this.newQuote = {
-      quote: '',
-      author: '',
-      votes: 0
-    };
+    this.newQuote = new Quote();
   }
 
   constructor() { }

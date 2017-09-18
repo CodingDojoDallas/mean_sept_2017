@@ -9,14 +9,16 @@ import { Quote } from '../quote';
 export class QuoteDashboardComponent implements OnInit {
   quotes: Quote[] = [];
 
-  createQuote(newQuote) {
-    // console.log('adding quote to database...');
+  createQuote(newQuote: Quote): void {
     this.quotes.push(newQuote);
-    // console.log(this.quotes);
   }
 
-  destroyQuote(idx) {
-    this.quotes.splice(idx, 1);
+  destroyQuote(quote: Quote): void {
+    this.quotes.splice(this.quotes.indexOf(quote), 1);
+  }
+
+  sortQuotes(): void {
+    this.quotes.sort(compare);
   }
 
   constructor() { }
@@ -24,4 +26,14 @@ export class QuoteDashboardComponent implements OnInit {
   ngOnInit() {
   }
 
+}
+
+function compare(a: Quote, b: Quote): number {
+  if (a.votes > b.votes) {
+    return -1;
+  }
+  if (a.votes < b.votes) {
+    return 1;
+  }
+  return 0;
 }
