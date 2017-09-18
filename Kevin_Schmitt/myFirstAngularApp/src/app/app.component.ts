@@ -13,21 +13,36 @@ export class AppComponent {
   dosomething() {
     return 'This is your function';
   };
-  myTimeZone = 0;
+  set = 0;
+  time = Date.now();
+  // time changed by milliseconds (2hrs = 7,200,000 milliseconds)
+  PSTtime = this.time - 7200000;
+  MSTtime = this.time - 3600000;
+  clear = true;
+
   
   mySwitch:boolean = false;
 
   pstButton():void {
-    this.myTimeZone = 1
-  };
-  cstButton():void {
-    this.myTimeZone = 2
+    this.clear = false;
+    this.set = 1; 
+    this.time = Date.now();
+    this.time = this.PSTtime;
   };
   mstButton():void {
-    this.myTimeZone = 3
+    this.clear = false;
+    this.set = 2; 
+    this.time = Date.now();
+    this.time = this.MSTtime;
+  };
+  cstButton():void {
+    this.clear = false;
+    this.set = 3; 
+    this.time = Date.now();
   };
   clearButton():void {
-    this.myTimeZone = 0
+    this.set = 0;
+    this.clear = true;
   };
   activateSwitch():void {
     this.mySwitch = !this.mySwitch;

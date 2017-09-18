@@ -4,12 +4,12 @@
   <h1>{{ name }}...</h1>
   <h1>{{ birthday }}...</h1>
   <h1>{{ dosomething() }}</h1>
-  <h1>{{ today | date:'short' }}</h1>
+  <h1 *ngIf='!clear'>{{ time | date:'short' }}</h1>
   
-  <button (click)='pstButton()' [ngClass]="{'on':myTimeZone==1,'red':myTimeZone!=1}" >PST</button>
-  <button (click)='cstButton()' [ngClass]="{'on':myTimeZone==2,'red':myTimeZone!=2}">CST</button>
-  <button (click)='mstButton()' [ngClass]="{'on':myTimeZone==3,'red':myTimeZone!=3}">MST</button>
-  <button (click)='clearButton()' [ngClass]="{'on':myTimeZone==0,'red':myTimeZone!=0}">Clear</button>
+  <button (click)='pstButton()' [ngClass]="{'on':set==1,'red':set!=1}" >PST</button>
+  <button (click)='mstButton()' [ngClass]="{'on':set==2,'red':set!=2}">MST</button>
+  <button (click)='cstButton()' [ngClass]="{'on':set==3,'red':set!=3}">CST</button>
+  <button (click)='clearButton()' [ngClass]="{'on':set==0,'red':set!=0}">Clear</button>
   <div *ngIf='mySwitch' [ngClass]="{'red':mySwitch}">
     <h1>My Secret</h1>
   </div>
