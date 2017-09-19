@@ -1,0 +1,22 @@
+<p>
+  power Component
+</p>
+<p>current level {{ powerlev }}</p>
+<div>
+  <label>Initial Power Level</label>
+  <input type="number" step='1' min='1' max='100' name='power' [(ngModel)]='powerlev'>
+  <input *ngIf='powerlev>100'  disabled (click)='allofthem()'type="submit" value='Calculate Powers'>
+  <input *ngIf='powerlev<=100'   (click)='allofthem()'type="submit" value='Calculate Powers'>
+  <!-- <input *ngIf='formData.valid==false' disabled type="submit" value='Submit'>
+  <input *ngIf='formData.valid' (click)="clickForm()" type="submit" value='Submit'> -->
+</div>
+<div class="upperHalf">
+  <app-human [myHuman]='humanPower'></app-human>
+  <app-saiyan [mySaiyan]='saiyanPower'></app-saiyan>
+  <app-supersaiyan [mySuperSaiyan]='supersaiyanPower'></app-supersaiyan>
+</div>
+<div class="lowerHalf">
+  <app-supersaiyan2 [mySuperSaiyan2]='supersaiyanPower2'></app-supersaiyan2>
+  <app-supersaiyan3 [mySuperSaiyan3]='supersaiyanPower3'></app-supersaiyan3>
+  <app-supersaiyan4 [mySuperSaiyan4]='supersaiyanPower4'></app-supersaiyan4>
+</div>

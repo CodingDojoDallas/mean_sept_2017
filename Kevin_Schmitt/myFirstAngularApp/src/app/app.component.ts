@@ -20,6 +20,7 @@ export class AppComponent {
   
   PSTtime = Date.now() - 7200000;
   MSTtime = Date.now() - 3600000;
+  
   clear = true;
 
   // setTime() {
