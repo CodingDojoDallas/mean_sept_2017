@@ -1,0 +1,24 @@
+h1 {
+    margin-bottom: 15px;
+}
+
+div {
+    display: inline-block;
+    width: 400px;
+}
+
+#red {
+    color: red;
+}
+
+#orange {
+    color: orange;
+}
+
+#green {
+    color: green;
+}
+
+#blue {
+    color: blue;
+}

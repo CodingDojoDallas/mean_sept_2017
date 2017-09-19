@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+
+</div>
+
+    <table>
+        <tr>
+            <th>Email</th>
+            <th>Importance</th>
+            <th>Subject</th>
+            <th>Content</th>
+        </tr>
+        <tr *ngFor='let info of info'>
+            <td> {{ info.email | lowercase }}</td>
+            <td *ngIf="info.importance == true"> High</td>
+            <td *ngIf="info.importance == false"> Low</td>
+            <td> {{ info.subject }}</td>
+            <td> {{ info.content }}</td>
+        </tr>
+    </table>

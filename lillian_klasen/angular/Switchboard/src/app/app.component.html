@@ -1,0 +1,17 @@
+<div style="text-align:center">
+  <h1>Switchboard</h1>
+</div>
+
+<div *ngFor="let button of buttons">
+<button
+    *ngIf="switch"
+     [ngClass]="{'on': switch}"
+     (click)='changeStatus()'>ON
+ </button>
+
+<button
+    *ngIf="!switch"
+    [ngClass]="{'off': !switch}"
+    (click)='changeStatus()'>OFF
+    </button>
+ </div>

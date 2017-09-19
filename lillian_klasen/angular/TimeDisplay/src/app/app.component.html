@@ -1,0 +1,22 @@
+
+<div style="text-align:center">
+  <h1>US Time Zone Display</h1>
+</div>
+
+<button
+(click)='pacific_time(); changeColor()'
+[ngClass]="{'clicked': color}">PST</button>
+
+<button (click)="mountain_time(); changeColor()"
+[ngClass]="{'clicked': color}">MST</button>
+
+<button (click)="central_time(); changeColor()"
+[ngClass]="{'clicked': color}">CST</button>
+
+<button (click)="eastern_time(); changeColor()"
+[ngClass]="{'clicked': color}">EST</button>
+
+<button (click)="clear()"
+[ngClass]="{'clicked': !color}">Clear</button>
+
+<h2>{{ time | date:'medium' }}</h2>
