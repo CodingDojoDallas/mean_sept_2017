@@ -1,0 +1,110 @@
+<div style="text-align:center">
+  <h1>Registration</h1>
+</div>
+
+{{ this.users | json }}
+
+<div *ngIf="submitted">Thank you for registering with us {{ user.first_name }}. We just sent you a confirmation email at {{ user.email | json }}, and we will send all mail to {{ user.street }}, {{ user.city }} {{ user.state }}. Have a wonderful day!</div>
+
+<h2>Account Information</h2>
+<form #form='ngForm' (submit)="submittedForm()">
+    *First Name:
+    <input
+    type='text'
+    name='first_name'
+    required
+    minlength='2'
+    [(ngModel)]='user.first_name'
+    #first_name='ngModel'>
+    <p *ngIf="first_name.errors">First name is required.</p>
+    <br>
+    <br>
+    *Last Name:
+    <input
+    type='text'
+    name='last_name'
+    required
+    minlength='2'
+    [(ngModel)]='user.last_name'
+    #last_name='ngModel'>
+    <p *ngIf="last_name.errors">Last name is required.</p>
+    <br>
+    <br>
+    *Email:
+    <input
+    type='text'
+    name='email'
+    email
+    minlength='2'
+    [(ngModel)]='user.email'
+    #email='ngModel'>
+    <p *ngIf="email.errors">Email must be valid.</p>
+    <br>
+    <br>
+    *Password:
+    <input
+    type='password'
+    name='password'
+    required
+    minlength='2'
+    [(ngModel)]='user.password'
+    #password='ngModel'>
+    <p *ngIf="password.errors">Password must be at least 8 characters long.</p>
+    <br>
+    <br>
+    *Password Confirmation:
+    <input
+    type='password'
+    name='password_confirmation'
+    required
+    [(ngModel)]='user.password_confirmation'
+    #password_confirmation='ngModel'>
+    <p *ngIf="(checkPassword() || password_confirmation.errors )">Password confirmation must match Password.</p>
+    <br>
+    <br>
+    *Street Address:
+    <input
+    type='text'
+    name='street'
+    required
+    minlength='2'
+    [(ngModel)]='user.street'
+    #street='ngModel'>
+    <p *ngIf="street.errors">Address is required.</p>
+    <br>
+    <br>
+    Unit/Apt #:
+    <input
+    type='text'
+    name='unit'
+    [(ngModel)]='user.unit'
+    #unit='ngModel'>
+    <br>
+    <br>
+    *City:
+    <input
+    type='text'
+    name='city'
+    required
+    minlength='2'
+    [(ngModel)]='user.city'
+    #city='ngModel'>
+    <p *ngIf="city.errors">City is required.</p>
+    <br>
+    <br>
+    *State:
+    <input
+    type='text'
+    name='state'
+    required
+    minlength='2'
+    [(ngModel)]='user.state'
+    #state='ngModel'>
+    <p *ngIf="state.errors">State is required.</p>
+    <br>
+    <br>
+    <input
+    [disabled]="!form.valid"
+    type='submit'
+    value='Register'>
+</form>
