@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Registration App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <h2>{{title}}</h2>
+    <div class="container">
+         <form (submit)="onSubmit()" #registrationForm="ngForm" name="registrationForm">
+         <div class="form-group">
+           <input
+             placeholder="First Name"
+             type="text"
+             name="first_name"
+             required
+             minlength="4"
+             maxlength="24"
+             [(ngModel)]="user.first_name"
+             #first_name='ngModel'
+           />
+           <span *ngIf="first_name.dirty && !first_name.valid">
+            <p class="text-danger">First name is required.</p>
+          </span>
+         </div>
+          <div class="form-group">
+            <input
+              placeholder="Last Name"
+              type="text"
+              name="last_name"
+              required
+              minlength="4"
+              maxlength="24"
+              [(ngModel)]="user.last_name"
+              #last_name='ngModel'
+            />
+            <span *ngIf="last_name.dirty && !last_name.valid">
+             <p class="text-danger">Last name is required.</p>
+           </span>
+          </div>
+           <div class="form-group">
+             <input
+               placeholder="Email"
+               type="text"
+               name="email"
+               required
+               minlength="4"
+               maxlength="24"
+               [(ngModel)]="user.email"
+               #email='ngModel'
+             />
+             <span *ngIf="email.dirty && !email.valid">
+              <p class="text-danger">Email is required.</p>
+            </span>
+           </div>
+           <div class="form-group">
+             <input
+               placeholder="Password"
+               type="text"
+               name="password"
+               required
+               minlength="10"
+               maxlength="24"
+               pattern="^([a-zA-Z0-9@*#]{8,15})$"
+               [(ngModel)]="user.password"
+               #password='ngModel'
+             />
+             <span *ngIf="password.dirty && !password.valid">
+              <p class="text-danger">Password is required.</p>
+            </span>
+           </div>
+           <div class="form-group">
+             <input
+               placeholder="Password Confirmation"
+               type="text"
+               name="password_confirm"
+               required
+               minlength="10"
+               maxlength="24"
+               pattern="^([a-zA-Z0-9@*#]{8,15})$"
+               [(ngModel)]="user.password_confirm"
+               #password_confirm='ngModel'
+             />
+             <span class="text-danger"*ngIf="(password_confirm.dirty || password_confirm.touched) && !password_confirm.valid">
+                Matching password confirmation is required.
+              </span>
+           </div>
+           <div class="form-group">
+             <input
+               placeholder="Street Address"
+               type="text"
+               name="street"
+               required
+               minlength="4"
+               maxlength="100"
+               [(ngModel)]="user.street"
+               #street='ngModel'
+             />
+             <span *ngIf="street.dirty && !street.valid">
+              <p class="text-danger">Street is required.</p>
+            </span>
+           </div>
+           <div class="form-group">
+             <input
+               placeholder="Unit/Apt #"
+               type="text"
+               name="apartment"
+               required
+               minlength="2"
+               maxlength="10"
+               [(ngModel)]="user.apartment"
+               #apartment='ngModel'
+             />
+             <span *ngIf="apartment.dirty && !apartment.valid">
+              <p class="text-danger">Password Confirmaion is required.</p>
+            </span>
+             <div>
+              <label for="state">Password Confirmation is Required</label>
+            </div>
+            <div class="form-group">
+              <select
+                placeholder="State"
+                type="text"
+                name="state"
+                required
+                minlength="4"
+                maxlength="100"
+                [(ngModel)]="user.state"
+                #state='ngModel'
+              >
+            <option value="Texas">Texas</option>
+            <option value="Texas">Colorado</option>
+            <option value="Texas">Washington</option>
+            <option value="Texas">Montana</option>
+            <option value="Texas">Wyoming</option>
+            <option value="Texas">California</option>
+            <option value="Texas">Kansas</option>
+            </select>
+            </div>
+          </div>
+          <span *ngIf="state.dirty && !state.valid">
+           <p class="text-danger">State is required.</p>
+         </span>
+         <div class="form-group">
+            <input type="text"
+            placeholder="City"
+              name="city"
+              [(ngModel)]="user.city"
+              #city="ngModel"
+              required
+              maxlength="50">
+              <span class="text-danger" *ngIf="city.dirty && !city.valid">
+                City is required.
+              </span>
+              </div>
+             <div>
+               <label for="radio">Are you feeling lucky</label>
+             </div>
+             <div class="form-group">
+               <input type="radio" name="radio"
+                required
+                value="false"
+                [(ngModel)]="user.radio"
+                #radio='ngModel'
+               />
+             </div>
+             <span *ngIf="radio.dirty && !radio.valid">
+              <p class="text-danger">You are required to tell us if you're feeling lucky</p>
+            </span>
+              <div class="form-group">
+                  <button class="btn btn-sm btn-success"type="submit" [disabled]="!registrationForm.form.valid">Register</button>
+              </div>
+              </form>
+            </div>
+            <div id="success" *ngIf='succeeded'>
+               <p>Thank you for registering with us, {{user.first_name}}. We just sent
+                 you a confirmation email at {{user.email}}, and we will send all
+                 mail to {{user.street}}<span *ngIf='user.apartment'> {{user.apartment}}</span>, {{user.city}}, {{user.state}}.
+               </p>
+             </div>
+        </body>
+</html>
