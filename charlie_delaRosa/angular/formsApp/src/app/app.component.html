@@ -1,0 +1,48 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+</div>
+
+<form (submit)="onSubmit()" #formData="ngForm">
+  <label for="">First Name:</label>
+  <input type="text"
+  name="first_name"
+  required
+  minlength="2"
+  maxlength="24"
+  [(ngModel)]="user.first_name"
+  #firstName="ngModel">
+  <label for="">Last Name:</label>
+  <input type="text"
+  name="last_name"
+  required
+  minlength="2"
+  maxlength="24"
+  [(ngModel)]="user.last_name"
+  #lastName="ngModel">
+  <label for="">Email</label>
+  <input type="text" name="email"
+  required
+  minlength="4"
+  maxlength="24"
+  [(ngModel)]="user.email"
+  #email="ngModel">
+  <input type="text" name="password"
+  required
+  minlength="10"
+  maxlength="24"
+  pattern="^([a-zA-Z0-9@*#]{8,15})$"
+  [(ngModel)]="user.password"
+  #password="ngModel">
+  <input type="submit" value="Submit">
+</form>
+<p *ngFor='let user of users'>{{user.firstName}}</p>
+{{user | json}}
+{{email.errors | json}}
+{{email.valid | json}}
+{{firstName.errors | json}}
+{{firstName.valid | json}}
+{{lastName.errors | json}}
+{{lastName.valid | json}}
