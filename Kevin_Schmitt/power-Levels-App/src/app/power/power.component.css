@@ -1,0 +1,8 @@
+.upperHalf *{
+display: inline-block;
+vertical-align: top;
+}
+.lowerHalf *{
+    display: inline-block;
+    vertical-align: top;
+    }
