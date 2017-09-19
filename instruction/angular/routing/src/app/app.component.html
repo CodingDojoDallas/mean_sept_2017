@@ -1,0 +1,8 @@
+<div>
+    <a [ngStyle]="{ 'margin': '1em' }" [routerLink]="['cars']">Cars</a>
+    <a [ngStyle]="{ 'margin': '1em' }" [routerLink]="['news']">News</a>
+</div>
+<div>
+    <button (click)="redirectToNews()">News</button>
+</div>
+<router-outlet></router-outlet>
