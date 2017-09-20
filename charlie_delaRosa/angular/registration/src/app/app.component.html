@@ -1,0 +1,183 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{title}}
+  </h1>
+</div>
+
+<div>
+  <h2>Account Information</h2>
+  <form (submit)="submitForm()" #formData="ngForm">
+    <table>
+      <tr>
+        <td>First Name:</td>
+        <td>
+          <input
+            type="text"
+            name="firstName"
+            [(ngModel)]="newUser.firstName"
+            required
+            minlength="3"
+            #firstName="ngModel">
+          </td>
+          <td>
+            <p [ngStyle]="{ 'color': 'red'}" *ngIf="firstName.errors && firstName.errors.required && firstName.touched">First name cannot be blank!</p>
+            <p [ngStyle]="{ 'color': 'red'}" *ngIf="firstName.errors && firstName.errors.minlength">
+            First name must be at lease {{firstName.errors.minlength.requiredLength}} characters</p>
+          </td>
+      </tr>
+
+      <tr>
+        <td>Last Name:</td>
+        <td>
+          <input
+            type="text"
+            name="lastName"
+            [(ngModel)]="newUser.lastName"
+            required
+            minlength="3"
+            #lastName="ngModel">
+          </td>
+          <td>
+            <p [ngStyle]="{ 'color': 'red'}" *ngIf="lastName.errors && lastName.errors.required && lastName.touched">Last name cannot be blank!</p>
+            <p [ngStyle]="{ 'color': 'red'}" *ngIf="lastName.errors && lastName.errors.minlength">
+            Last name must be at lease {{lastName.errors.minlength.requiredLength}} characters</p>
+          </td>
+      </tr>
+
+      <tr>
+        <td>Email:</td>
+        <td>
+          <input
+          type="text"
+          name="email"
+          [(ngModel)]="newUser.email"
+          #email="ngModel"
+          required
+          minlength="3">
+        </td>
+        <td>
+          <p [ngStyle]="{ 'color': 'red'}" *ngIf="email.errors && email.errors.required && email.touched">Email cannot be blank!</p>
+          <p [ngStyle]="{ 'color': 'red'}" *ngIf="email.errors && email.errors.minlength">
+          Email must be at lease {{email.errors.minlength.requiredLength}} characters</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Password:</td>
+        <td>
+          <input
+          type="password"
+          name="password"
+          [(ngModel)]="newUser.password"
+          #password="ngModel"
+          required
+          minlength="8">
+        </td>
+        <td>
+          <p [ngStyle]="{ 'color': 'red'}" *ngIf="password.errors && password.errors.required && password.touched">Password cannot be blank!</p>
+          <p [ngStyle]="{ 'color': 'red'}" *ngIf="password.errors && password.errors.minlength">
+          Password must be at lease {{password.errors.minlength.requiredLength}} characters</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Password Confirmation:</td>
+        <td>
+          <input
+          type="password"
+          name="passwordConfirmation"
+          [(ngModel)]="newUser.passwordConfirmation"
+          #passwordConfirmation="ngModel"
+          required
+          minlength="8">
+        </td>
+        <td>
+          <p [ngStyle]="{ 'color': 'red'}" *ngIf="passwordConfirmation.errors && passwordConfirmation.errors.required && passwordConfirmation.touched">Password confirmation cannot be blank!</p>
+          <p [ngStyle]="{ 'color': 'red'}" *ngIf="passwordConfirmation.errors && passwordConfirmation.errors.minlength">
+          Password confirmation must match password</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Street:</td>
+        <td>
+          <input
+          type="text"
+          name="address"
+          [(ngModel)]="newUser.address"
+          #address="ngModel"
+          required
+          minlength="3">
+        </td>
+        <td>
+          <p [ngStyle]="{ 'color': 'red'}" *ngIf="address.errors && address.errors.required && address.touched">Address cannot be blank!</p>
+          <p [ngStyle]="{ 'color': 'red'}" *ngIf="address.errors && address.errors.minlength">
+          Address must be at lease {{address.errors.minlength.requiredLength}} characters</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Unit/Apt#:</td>
+        <td>
+          <input
+          type="text"
+          name="aptUnit"
+          [(ngModel)]="newUser.aptUnit">
+        </td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>City:</td>
+        <td>
+          <input
+          type="text"
+          name="city"
+          [(ngModel)]="newUser.city"
+          #city="ngModel"
+          required
+          minlength="3">
+        </td>
+        <td>
+          <p [ngStyle]="{ 'color': 'red'}" *ngIf="city.errors && city.errors.required && city.touched">City cannot be blank!</p>
+          <p [ngStyle]="{ 'color': 'red'}" *ngIf="city.errors && city.errors.minlength">
+          City must be at lease {{city.errors.minlength.requiredLength}} characters</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td>State:</td>
+        <td>
+          <select name="state">
+            <option *ngFor="let state of states" [value]="state">{{state}}</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>I'm feeling lucky</td>
+        <td><input type="radio" name="lucky" value="yes"><label>Yes</label><input type="radio" name="lucky" value="no">No</td>
+      </tr>
+
+      <tr>
+        <td><input *ngIf="formData.valid == false" disabled type="submit" value="Register"></td>
+        <td><input *ngIf="formData.valid == true" type="submit" value="Register"></td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{user.firstName}}</td>
+    <td>{{user.email}}</td>
+  </tr>
+</table>
