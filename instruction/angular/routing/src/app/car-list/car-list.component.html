@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let car of cars">
+    <a [routerLink]="[car._id]">{{ car.model }}</a>
+  </li>
+</ul>

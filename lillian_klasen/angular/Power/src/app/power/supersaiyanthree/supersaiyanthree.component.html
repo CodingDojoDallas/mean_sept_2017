@@ -1,0 +1,5 @@
+<div>
+    <p id='name'>SuperSaiyanThreeComponent</p>
+    <p>Power Level: {{ power.current_power * 250 }}</p>
+    <p *ngIf="((power.current_power * 250) > '20000')">"Superlative!"</p>
+</div>

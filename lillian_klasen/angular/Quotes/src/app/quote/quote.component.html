@@ -1,0 +1,25 @@
+<h1>Add a Quote</h1>
+
+<form (submit)='addQuote()'>
+<textarea
+    name='content'
+    required
+    [(ngModel)]='quote.content'
+    #content='ngModel'>
+</textarea>
+<p class='validation' *ngIf='content.errors'>Quote is required</p>
+
+<label>Author:</label>
+<input
+ type='text'
+ name='author'
+ required
+ [(ngModel)]='quote.author'
+ #author='ngModel'>
+ <p class='validation' *ngIf='author.errors'>Author is required</p>
+
+
+<input type='submit' value='Add Quote'>
+</form>
+
+<app-quote-list [quotes]='quotes'></app-quote-list>
