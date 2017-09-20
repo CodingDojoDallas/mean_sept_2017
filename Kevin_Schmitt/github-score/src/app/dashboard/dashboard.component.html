@@ -1,0 +1,12 @@
+<p>
+  dashboard works! Right on!
+</p>
+<div class="wrapper">
+  <form (submit)='getSource()'>
+    <div>
+      <label>Username</label>
+      <input type="text" name='username' [(ngModel)]='newSource.source'>
+    </div>
+    <input type="submit" value="Submit">
+  </form>
+</div>
