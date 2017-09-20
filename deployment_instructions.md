@@ -8,7 +8,7 @@ Navigate to your project's root directory
 ```
 cd {{ path_to_your_project }}
 ```
-Set up the `.gitignore` files
+Set up the `.gitignore` file
 ```
 vim .gitignore
 ```
