@@ -12,11 +12,11 @@ Set up the `.gitignore` file
 ```
 vim .gitignore
 ```
-You're now using VIM.  Press i to go into Insert Mode.  Then, paste the following code:
+You're now using VIM.  Press `i` to go into Insert Mode.  Then, paste the following code:
 ```
 /node_modules
 ```
-Press esc to exit Insert Mode.  Then, type :wq  Then press enter to save the file and exit VIM.
+Press esc to exit Insert Mode.  Then, type `:wq`  Then press enter to save the file and exit VIM.
 
 Push your changes to GitLab
 ```
@@ -85,7 +85,7 @@ Set up Nginx
 cd /etc/nginx/sites-available
 sudo vim {{ repo_name }}
 ```
-You're now using VIM.  Press i to go into Insert Mode.  Then, paste the following code:
+You're now using VIM.  Press `i` to go into Insert Mode.  Then, paste the following code:
 ```
 server {
     listen 80;
@@ -99,7 +99,7 @@ server {
     }
 }
 ```
-Press esc to exit Insert Mode.  Then, type :wq  Then press enter to save the file and exit VIM.
+Press esc to exit Insert Mode.  Then, type `:wq`  Then press enter to save the file and exit VIM.
 
 Remove the default file
 ```
