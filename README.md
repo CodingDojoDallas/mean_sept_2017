@@ -32,6 +32,13 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [MEAN - Mongoose Associations and Advanced Queries](https://youtu.be/VTdMQLKO-BQ  "MEAN - Mongoose Associations and Advanced Queries") <br>
 [MEAN - Modularizing Server-Side Code](https://youtu.be/OnBRbBWQqaY "MEAN - Modularizing Server-Side Code") <br>
 [MEAN - Task-API Demo](https://youtu.be/A98CsLuoTtY "MEAN - Task-API Demo") <br>
+[MEAN - Login & Registration](https://youtu.be/MY1xq-otIX0 "MEAN - Login & Registration") <br>
+[MEAN - TypeScript & Angular Intro](https://youtu.be/WT7T_LehrK8 "MEAN - TypeScript & Angular Intro") <br>
+[MEAN - Angular - Component Data](https://youtu.be/PvCYeaHtH94 "MEAN - Angular - Component Data") <br>
+[MEAN - Angular - Submitting Forms & Click Events](https://youtu.be/PW1HBbRnpG0 "MEAN - Angular - Submitting Forms & Click Events") <br>
+[MEAN - Angular - @Input() & @Output()](https://youtu.be/G4BMjt6E5YI "MEAN - Angular - @Input() & @Output()") <br>
+[MEAN - Angular - Services & HTTP](https://youtu.be/Our_tZXPV9k "MEAN - Angular - Services & HTTP") <br>
+[MEAN - Angular - Routing](https://youtu.be/C02EZUDyUm0 "MEAN - Angular - Routing") <br>
 
 # Resources
 [MDN JavaScript Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript "MDN JavaScript Documentation") <br>

@@ -1,0 +1,10 @@
+div {
+    background-color: CornflowerBlue;
+    padding: 25px;
+    border: 2px solid black;
+    display: inline-block;
+    width: 500px;
+    height: 500px;
+    margin-top: 20px;
+
+}

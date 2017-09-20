@@ -27,15 +27,15 @@ app.use(session({
 app.post("/guess", (req, res) => {
   console.log(req.body);
   req.session.number = req.body.number
-  let computer = Math.trunc(Math.random()*101);
-  let message = "";
-  if(req.body.number == computer){
-    message += "You guessed correctly"
+  req.session.computer = Math.trunc(Math.random()*101);
+  req.session.message = "";
+  if(req.body.number == req.session.computer){
+    req.session.message += "Congratualtions! You guessed correctly! Computer was thinking: "+req.session.computer
   }else {
-    message += "Sorry, you guessed incorrectly, please try again"
+    req.session.message += " - Sorry, you guessed incorrectly, computer was thinking: "+req.session.computer+" please try again."
   }
-  console.log(message);
-  console.log(computer);
+  console.log(req.session.message);
+  console.log(req.session.computer);
   return res.redirect('/');
 });
 

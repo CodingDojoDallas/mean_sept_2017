@@ -1,0 +1,84 @@
+<div class="form" style="text-align:center">
+  <div *ngIf='bool==true' [ngStyle]='{"text-align":"center","color":"white","background":"green","width":"300px","height":"200px"}'>Thank you for registering with us {{ users[users.length-1].name }}. We just sent you a confirmation email at <a href=''>{{ users[users.length-1].email }}</a>, and we will send all mail to {{ users[users.length-1].address }}.<p>Have a wonderful day!</p></div>
+  <h1>Register</h1>
+  <form (submit)='submitForm()' #formData='ngForm'>
+    <div>
+      <label>Name</label>
+      <input type="text" name='name' 
+      [(ngModel)]='newUser.name'
+      required
+      minlength='3'
+      #name='ngModel'>
+      <!-- <p>{{ name.errors | json }}</p>
+      <p>{{ name.touched | json }}</p> -->
+      <p [ngStyle]='{"color":"red"}' *ngIf='name.errors && name.errors.minlength'>Name must be {{ name.errors.minlength.requiredLength }} characters</p>
+      <!-- <p [ngStyle]='{"color":"red"}' *ngIf='name.errors && name.errors.required && name.touched'>Name cannot be blank</p> -->
+    </div>
+    <div>
+      <label>Email</label>
+      <input type="text" name='email' [(ngModel)]='newUser.email' 
+      required
+      minlength='4'
+      #email='ngModel'>
+      <!-- <p>{{ name.errors | json }}</p> -->
+      <p [ngStyle]='{"color":"red"}' *ngIf='email.errors && email.errors.minlength'>Name must be {{ email.errors.minlength.requiredLength }} characters</p>
+    </div>
+    <div>
+      <label>Address</label>
+      <input type="text" name='address' [(ngModel)]='newUser.address'
+      required
+      minlength='8'
+      #address='ngModel'>
+      <p [ngStyle]='{"color":"red"}' *ngIf='address.errors && address.errors.minlength'>Name must be {{ address.errors.minlength.requiredLength }} characters</p>
+    </div>
+    <div>
+      <label>Password</label>
+      <input type="password" name='password' [(ngModel)]='newUser.password'
+      required
+      minlength='4'
+      #password='ngModel'>
+      <p [ngStyle]='{"color":"red"}' *ngIf='password.errors && password.errors.minlength'>Name must be {{ password.errors.minlength.requiredLength }} characters</p>
+    </div>
+    <div>
+      <label>Feeling Lucky?*</label>
+      <div>
+      <input type="radio" name='lucky' value='yes' [(ngModel)]='newUser.lucky'
+      required 
+      #password='ngModel'>Yes, Lucky<br>
+      <input type="radio" name='lucky' value='no' [(ngModel)]='newUser.lucky'>No, Unlucky<br>
+      </div>
+      <!-- <p [ngStyle]='{"color":"red"}' *ngIf='lucky.errors'>Must select Yes or No</p> -->
+    </div>
+      <input *ngIf='formData.valid==false' disabled type="submit" value='Submit'>
+      <input *ngIf='formData.valid' (click)="clickForm()" type="submit" value='Submit'>
+  </form>
+  <button (click)='resetDiv()'>Reset</button>
+  <!-- {{ formData.valid | json }} -->
+  <div *ngFor='let user of users'>{{ user.name }} {{ user.email }} {{ user.lucky }}</div>
+  
+</div>
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1 [ngClass]="{'red':mySwitch, 'green':!mySwitch}">Welcome to {{ namer }}'s {{title}}!...</h1>
+  <h1>{{ namer }}...</h1>
+  <h1>{{ birthday }}...</h1>
+  <h1>{{ dosomething() }}</h1>
+  <h1 *ngIf='!clear'>{{ time | date:'short' }}</h1>
+  
+  <button (click)='pstButton()' [ngClass]="{'on':set==1,'red':set!=1}" >PST</button>
+  <button (click)='mstButton()' [ngClass]="{'on':set==2,'red':set!=2}">MST</button>
+  <button (click)='cstButton()' [ngClass]="{'on':set==3,'red':set!=3}">CST</button>
+  <button (click)='clearButton()' [ngClass]="{'on':set==0,'red':set!=0}">Clear</button>
+  <div *ngIf='mySwitch' [ngClass]="{'red':mySwitch}">
+    <h1>My Secret</h1>
+  </div>
+  <div>
+    <button (click)='activateSwitch()'>Make Secret Appear!</button>
+  </div>
+  <div>
+    <button *ngFor='let num of buttons; let idx = index' [ngClass]="{'red':buttons[idx] == 'off', 'green':buttons[idx] == 'on'}" (click)='toggleSwitch(idx)'>{{ num }}</button>
+  </div>
+  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+
+

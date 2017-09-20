@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add a New Animal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <h1>Welcome to the Dashboard</h1>
+    <h4>Here are the current Animals:</h4>
+    <%for(idx in animals){%>
+  <h5>Type: <a href="/<%=animals[idx]._id%>"><%= animals[idx].type%></a></h5>
+  <form action="/<%=animals[idx]._id%>/delete/" method="post">
+  <input class="btn btn-xs btn-danger"type="submit" value="delete">
+  </form>
+  <a class="btn btn-xs btn-info"href="/<%= animals[idx]._id %>/edit/">Edit Animal</a>
+  <%}%>
+    <a class="btn btn-xs btn-primary"href="/new">Add a New Animal</a>
+  </body>
+</html>

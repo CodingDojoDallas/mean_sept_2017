@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Retro Barcode Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container box">
+      <h2>Retro Barcode Generator</h2>
+      <div *ngFor = "let color of colorArray" [ngStyle]="{'background-color': color}"class="cell"></div>
+    </div>
+  </body>
+</html>

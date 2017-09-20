@@ -1,0 +1,6 @@
+<h1>Quotes List</h1>
+<div *ngIf='quotes'>
+    <p id='quotes_list' *ngFor='let quote of quotes'>{{ quote.content }} - {{ quote.author }}</p>
+</div>
+
+{{ quotes | json }}

@@ -1,0 +1,6 @@
+<app-quote-new (createQuoteEvent)="createQuote($event)"></app-quote-new>
+<app-quote-list
+  [quotes]="quotes"
+  (destroyQuoteEvent)="destroyQuote($event)"
+  (sortQuotesEvent)="sortQuotes()">
+</app-quote-list>

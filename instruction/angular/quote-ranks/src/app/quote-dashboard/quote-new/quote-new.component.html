@@ -1,0 +1,15 @@
+<div class="quote-new-wrapper">
+  <h2>Add a Quote</h2>
+  <form (submit)="createQuote()">
+    <div class=form-group>
+      <textarea name="quote" [(ngModel)]="newQuote.quote"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Author</label>
+      <input type="text" name="author" [(ngModel)]="newQuote.author">
+    </div>
+    <div class="form-group">
+      <input id="new-quote-button" type="submit" value="Add Quote">  
+    </div>
+  </form>
+</div>

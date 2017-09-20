@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Quoting Dojo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1>Welcome to Quoting Dojo</h1>
+      <form action="/quotes" method="post">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <textarea name="quote" rows="5" cols="50" placeholder="Add a Quote Here!"></textarea>
+        </div>
+        <div class="form-group">
+          <input class="btn btn-md btn-primary"type="submit"value="Add My Quote">
+        </div>
+      </form>
+      <button class="btn btn-md btn-success"><a style="text-decoration: none; color: white;"href="/show">Skip to Quotes</a></button>
+    </div>
+  </body>
+</html>

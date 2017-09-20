@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add a New Animal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="Container">
+      <h3>Add a New Animal Here</h3>
+      <% if (typeof(errors) != 'undefined' ) { %>
+        <% for ( var x in errors ) { %>
+          <h3 class="text-danger"><%= errors[x].message %></h3>
+          <% } %>
+      <% } %>
+      <form action="/animals" method="post">
+        <div class="form-group">
+          <input class="text-success"type="text" name="name" placeholder="Type of Animal">
+        </div>
+        <div class="form-group">
+          <textarea class="text-success"type="text" name="description" placeholder="Describe This Animal"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Add Animal">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

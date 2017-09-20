@@ -1,0 +1,15 @@
+.cell{
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border: 1px solid black;
+}
+.box{
+  width: 525px;
+  height: 150px;
+  border: 2px solid black;
+  margin-top: 50px;
+}
+h2{
+  text-align: center;
+}
