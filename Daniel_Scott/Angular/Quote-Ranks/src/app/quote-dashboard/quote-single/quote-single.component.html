@@ -1,0 +1,6 @@
+<div class="container-fluid quote-box">
+<h4>"{{quote.quote}}" - {{quote.author}}  +{{quote.votes}} Votes</h4>
+<button (click)="increaseVote()"class="btn btn-md btn-success">Vote Up</button>
+<button (click)="decreaseVote()"class="btn btn-md btn-danger">Vote Down</button>
+<button (click)="destroyQuote()"class="btn btn-md btn-basic">Delete</button>
+</div>
