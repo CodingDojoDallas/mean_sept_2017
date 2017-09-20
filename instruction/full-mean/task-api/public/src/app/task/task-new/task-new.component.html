@@ -1,0 +1,17 @@
+<form (submit)="createTask()">
+  <div>
+    <label>Title</label>
+    <input type="text" name="title" [(ngModel)]="newTask.title">
+  </div>
+  <div>
+    <label>Description (Optional)</label>
+    <input type="text" name="description" [(ngModel)]="newTask.description">
+  </div>
+  <div>
+    <input type="submit" value="Create Task">
+  </div>
+</form>
+<a href="#" (click)="createTask()">Create Task</a>
+<div>
+  <p [ngStyle]="{ 'color': 'red' }" *ngFor="let error of errors">{{ error }}</p>
+</div>
