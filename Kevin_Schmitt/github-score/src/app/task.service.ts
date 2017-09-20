@@ -4,15 +4,12 @@ import { Http } from '@angular/http';
 @Injectable()
 export class TaskService {
 
-  articles:any[] = [];
-
   constructor(private _http: Http) { }
 
-  
-  getSource(source: string){
-    this._http.get(`https://developer.github.com/v3/${source}`).subscribe(
+  getSource(source: string, callback){
+    this._http.get(`https://api.github.com/users/${source}`).subscribe(
       (response) => {
-        console.log('res:', response);
+        callback(response.json());
       },
       (err) => console.log(err)
     );
