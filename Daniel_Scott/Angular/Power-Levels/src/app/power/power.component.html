@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Power Component</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="main-page">
+    <div class="container-fluid">
+      <h4>Calculate Powers</h4>
+        <label for="calculator">Initial Power Level</label>
+          <input type="number" max="100" min="0" [(ngModel)]="power">
+    </div>
+    <div class="photo">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlbblPLRNVEVCIbH8dTvm5M7mjZNLsBYI0qXXCNJtSKsja9IQtyQ" alt="Picture of Goku">
+    </div>
+    <div class="row">
+      <app-human [power]="power" class="boxes"></app-human>
+      <app-saiyan [power]="power" class="boxes"></app-saiyan>
+      <app-super-saiyan [power]="power" class="boxes"></app-super-saiyan>
+    </div>
+  <div class="row">
+    <app-super-saiyan-two [power]="power" class="boxes"></app-super-saiyan-two>
+    <app-super-saiyan-three [power]="power" class="boxes"></app-super-saiyan-three>
+    <app-super-saiyan-four [power]="power" class="boxes"></app-super-saiyan-four>
+  </div>
+  </div>
+</body>
+
+</html>

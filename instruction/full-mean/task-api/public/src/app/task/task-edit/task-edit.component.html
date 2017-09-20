@@ -1,0 +1,13 @@
+<form (submit)="updateTask()">
+  <div>
+    <label (click)="doSomething()">Title</label>
+    <input type="text" name="title" [(ngModel)]="task.title">
+  </div>
+  <div>
+    <label>Description (Optional)</label>
+    <input type="text" name="description" [(ngModel)]="task.description">
+  </div>
+  <div>
+    <input type="submit" value="Update Task">
+  </div>
+</form>

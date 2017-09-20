@@ -39,6 +39,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [MEAN - Angular - @Input() & @Output()](https://youtu.be/G4BMjt6E5YI "MEAN - Angular - @Input() & @Output()") <br>
 [MEAN - Angular - Services & HTTP](https://youtu.be/Our_tZXPV9k "MEAN - Angular - Services & HTTP") <br>
 [MEAN - Angular - Routing](https://youtu.be/C02EZUDyUm0 "MEAN - Angular - Routing") <br>
+[MEAN - Angular - Full MEAN](https://youtu.be/ADQiwVmXtS8 "MEAN - Angular - FULL MEAN") <br>
 
 # Resources
 [MDN JavaScript Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript "MDN JavaScript Documentation") <br>
