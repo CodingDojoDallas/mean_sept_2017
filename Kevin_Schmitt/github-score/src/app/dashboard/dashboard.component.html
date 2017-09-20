@@ -1,0 +1,19 @@
+<p>
+  dashboard component up and running!
+</p>
+<h1>GitHub Score Calculator</h1>
+<div class="wrapper">
+  <form (submit)='getSource()'>
+    <div>
+      <label>Username</label>
+      <input type="text" name='username' [(ngModel)]='newSource.source'>
+    </div>
+    <input type="submit" value="Calculate Score">
+  </form>
+</div>
+<div *ngIf='githubInfo' [ngStyle]='{"text-align":"center","color":"white","background":"green","width":"300px","height":"200px"}'>
+  <!-- {{ githubInfo | json }} -->
+  <!-- <p>{{ githubInfo.id }}</p> -->
+  <p>Your GitHub Score {{apireq}}</p>
+  <p>{{ text }}</p>
+</div>
