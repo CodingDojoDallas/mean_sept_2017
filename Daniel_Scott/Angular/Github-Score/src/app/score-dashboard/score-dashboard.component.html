@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GitHub Score</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+  <div class="container-fluid dash">
+    <div class="container">
+      <h2>Welcome to Github Score</h2>
+    </div>
+    <div class="container-fluid">
+      <form (submit)="retrieveUser()">
+        <div class="form-group">
+          <label for="userName">Search By Username</label>
+          <input type="text" name="username" [(ngModel)]="username.user">
+        </div>
+        <div class="form-group">
+          <input style="border: 1px solid black"class="btn btn-sm btn-warning"type="submit"value="Find Username">
+        </div>
+      </form>
+      <h3 *ngIf="info.id">This Github User's Score is: {{info.public_repos + info.followers}}</h3>
+      <h4 class="text-danger"*ngIf=" info.public_repos + info.followers < 20">This User's Score Needs Work</h4>
+      <h4 class="text-warning"*ngIf=" info.public_repos + info.followers > 20 && info.public_repos + info.followers < 50">A Decent Start!</h4>
+      <h4 class="text-default"*ngIf=" info.public_repos + info.followers > 50 && info.public_repos + info.followers < 100">Doing Good!</h4>
+      <h4 class="text-success"*ngIf=" info.public_repos + info.followers > 100 && info.public_repos + info.followers < 200">Great Job!</h4>
+      <h4 class="text-primary"*ngIf=" info.public_repos + info.followers > 200 && info.public_repos + info.followers >=200">Github Elite!!!</h4>
+    </div>
+    <div class="container-fluid">
+      <img src="{{info.avatar_url}}" alt="">
+    </div>
+  </div>
+  </body>
+</html>
