@@ -11,7 +11,7 @@ export class AppComponent {
 
   constructor(private _router: Router) { }
 
-  redirectToNews() {
+  redirectToNews(): void {
     this._router.navigateByUrl('news');
   }
 

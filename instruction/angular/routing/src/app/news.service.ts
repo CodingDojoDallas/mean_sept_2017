@@ -4,7 +4,7 @@ import { Http } from '@angular/http';
 @Injectable()
 export class NewsService {
 
-  news: any[] = [];
+  news: any[];
 
   constructor(private _http: Http) { }
 

@@ -1,0 +1,12 @@
+#nav{
+  margin-top: -600px;
+  width: 200px;
+  height: 600px;
+  background-color: blue;
+  border: 2px solid black;
+}
+a{
+  color: black;
+  display:inherit;
+  margin-top: 20px;
+}
