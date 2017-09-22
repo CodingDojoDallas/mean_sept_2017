@@ -1,0 +1,11 @@
+div {
+  text-align: center;
+}
+
+a {
+  margin-left: 40px;
+}
+
+a:first-child {
+  margin-left: 0;
+}

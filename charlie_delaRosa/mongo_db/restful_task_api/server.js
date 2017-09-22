@@ -4,12 +4,14 @@ const session = require('express-session');
 const port = 8000;
 const app = express();
 
-//middleware
-app.set('view engine', 'ejs');
-app.set('views', __dirname + '/client/views');
+//middleware-not necessary for Angular
+// app.set('view engine', 'ejs');
+// app.set('views', __dirname + '/client/views');
 
 app.use(express.static(__dirname + '/client/static'));
-app.use(bodyParser.urlencoded({ extended: true }));
+// Remember to specify json instead of urlencoded.
+// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(session({
 	secret: 'loginregisterandstuff',
 	resave: false,

@@ -40,6 +40,7 @@ class TasksController{
   }
 
   destroy(req, res){
+    console.log("In the destroy method.");
     Task.findByIdAndRemove(req.params.id, (err, task) => {
       if(err){
         return res.json(err);
