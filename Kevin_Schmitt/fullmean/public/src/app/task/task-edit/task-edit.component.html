@@ -1,0 +1,24 @@
+<form (submit)="updateTask()">
+  <div>
+    <label (click)="doSomething()">Title</label>
+    <input type="text" name="title" [(ngModel)]="task.title">
+  </div>
+  <div>
+    <label>Description (Optional)</label>
+    <input type="text" name="description" [(ngModel)]="task.description">
+  </div>
+  <div>
+    <p>--Completed--</p>
+    <label>True</label>
+    <input type="radio" value='true' name="completed" [(ngModel)]="task.completed">
+    <label>False</label>
+    <input type="radio" value='false' name="completed" [(ngModel)]="task.completed">
+  </div>
+  <div>
+    <input type="submit" value="Update Task" >
+  </div>
+</form>
+<h1 *ngIf='goodtogo == true' [ngStyle]="{'color':'red'}">Object updated</h1>
+<div>
+  <p [ngStyle]="{ 'color': 'red' }" *ngFor="let error of errors">{{ error }}</p>
+</div>
