@@ -41,6 +41,7 @@ https://www.dropbox.com/s/h3texmoqm801j8w/github_workflow_v4.pdf?dl=0
 [MEAN - Angular - Routing](https://youtu.be/C02EZUDyUm0 "MEAN - Angular - Routing") <br>
 [MEAN - Angular - Full MEAN](https://youtu.be/ADQiwVmXtS8 "MEAN - Angular - FULL MEAN") <br>
 [Full MEAN - Anonymous Notes](https://youtu.be/tWxmZtIl3UY "Full MEAN - Anonymous Notes") <br>
+[Full MEAN - Login/Reg](https://youtu.be/sldCEkmaFyQ "Full MEAN - Login/Reg") <br>
 
 # Resources
 [MDN JavaScript Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript "MDN JavaScript Documentation") <br>
