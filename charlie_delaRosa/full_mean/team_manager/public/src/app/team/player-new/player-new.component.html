@@ -1,3 +1,23 @@
-<p>
-  player-new works!
-</p>
+<h1><a href="#" [routerLink]="['']">List</a></h1>
+<div class="">
+  <h2>Add Player</h2>
+  <form (submit)="createPlayer()">
+    <table>
+      <tr>
+        <td>Player Name:</td>
+        <td><input type="text" name="name" [(ngModel)]="newPlayer.name"></td>
+      </tr>
+      <tr>
+        <td>Preferred Position:</td>
+        <td><input type="text" name="prefPosition" [(ngModel)]="newPlayer.prefPosition"></td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="Add"></td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<div>
+  <p *ngFor="let error of errors">{{error}}</p>
+</div>

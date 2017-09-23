@@ -1,3 +1,13 @@
-<p>
-  player-list works!
-</p>
+<h1><a href="#" [routerLink]="['new']">Add Player</a></h1>
+<table>
+  <tr>
+    <th>Player Name</th>
+    <th>Preferred Position</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let player of players">
+    <td>{{player.name}}</td>
+    <td>{{player.prefPosition}}</td>
+    <td><a href="#">Delete</a></td>
+  </tr>
+</table>
