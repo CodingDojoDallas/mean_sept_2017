@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dojo Weather</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container-fluid main">
+      <div class="container">
+        <h1>Weather Forecast Application</h1>
+      </div>
+      <div class="nav-bar">
+        <ul>
+          <li>
+            <a [routerLink]="['seattle']">Seattle, WA</a>
+          </li>
+          <li>|</li>
+          <li>
+            <a [routerLink]="['sanjose']">San Jose, CA</a>
+          </li>
+          <li>|</li>
+          <li>
+            <a [routerLink]="['burbank']">Burbank, CA</a>
+          </li>
+          <li>|</li>
+          <li>
+            <a [routerLink]="['dallas']">Dallas, TX</a>
+          </li>
+          <li>|</li>
+          <li>
+            <a [routerLink]="['dc']">Washington D. C.</a>
+          </li>
+          <li>|</li>
+          <li>
+            <a [routerLink]="['chicago']">Chicago, IL</a>
+          </li>
+        </ul>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </body>
+</html>

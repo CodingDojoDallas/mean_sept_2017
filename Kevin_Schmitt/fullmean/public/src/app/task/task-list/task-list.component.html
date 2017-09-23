@@ -1,0 +1,16 @@
+<div>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Completed?</th>
+    </tr>
+    <tr *ngFor="let task of tasks; let idx = index">
+      <td>{{ task.title }}</td>
+      <td>{{ task.description }}</td>
+      <td>{{ task.completed }}</td>
+      <td><button [routerLink]="['/tasks', task._id, 'edit']">Edit</button></td>
+      <td><button (click)="destroyTask(task._id, idx)">Delete</button></td>
+    </tr>
+  </table>
+</div>

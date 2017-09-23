@@ -14,25 +14,6 @@ export class DashboardComponent implements OnInit {
   apireq:number;
   class1:string;
   text:string;
-  
-  // confirm(){
-  //   if(this.apireq<20){
-  //     this.class1 = 'red';
-  //     this.text = 'Needs Work!'
-  //   }else if(this.apireq<50){
-  //     this.class1 = 'orange';
-  //     this.text = 'A Decent Start!'
-  //   }else if(this.apireq<100){
-  //     this.class1 = 'black';
-  //     this.text = 'Doing Good!'
-  //   }else if(this.apireq<200){
-  //     this.class1 = 'green';
-  //     this.text = 'Great Job!'
-  //   }else if(this.apireq>=200){
-  //     this.class1 = 'blue';
-  //     this.text = 'GitHub Elite!'
-  //   }
-  // }
 
 
   constructor(private _newsService: TaskService) { }
