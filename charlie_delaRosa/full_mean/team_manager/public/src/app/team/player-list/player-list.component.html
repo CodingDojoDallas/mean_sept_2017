@@ -5,9 +5,9 @@
     <th>Preferred Position</th>
     <th>Actions</th>
   </tr>
-  <tr *ngFor="let player of players">
+  <tr *ngFor="let player of players; let idx = index">
     <td>{{player.name}}</td>
     <td>{{player.prefPosition}}</td>
-    <td><a href="#">Delete</a></td>
+    <td><button (click)="destroyPlayer(player._id, idx)">Delete</button></td>
   </tr>
 </table>

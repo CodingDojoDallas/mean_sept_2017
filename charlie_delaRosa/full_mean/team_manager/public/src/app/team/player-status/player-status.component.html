@@ -1,11 +1,16 @@
-<p>
-  player-status works!
-</p>
-<h1>Player Status - Game ???</h1>
-<h3><a href="#">Game 1</a> | <a href="#">Game 2</a> | <a href="#">Game 3</a></h3>
+<h1 *ngIf=game1>Player Status - Game 1</h1>
+<h1 *ngIf=game2>Player Status - Game 2</h1>
+<h1 *ngIf=game3>Player Status - Game 3</h1>
+
+<h3><button (click)="whichGame(1)">Game 1</button> | <button (click)="whichGame(2)">Game 2</button> | <button (click)="whichGame(3)">Game 3</button></h3>
+
 <table>
   <tr>
     <th>Player Name</th>
     <th>Status</th>
+  </tr>
+  <tr *ngFor="let player of players">
+    <td>{{player.name}}</td>
+    <td><button type="button" name="playing">Playing</button><button type="button" name="notPlaying">Not Playing</button><button type="button" name="undecided">Undecided</button></td>
   </tr>
 </table>

@@ -22,4 +22,8 @@ export class PlayerListComponent implements OnInit {
     this._playerService.index(players => this.players = players);
   }
 
+  destroyPlayer(id: string, idx: number) {
+    this._playerService.destroy(id, res => this.players.splice(idx,1));
+  }
+
 }

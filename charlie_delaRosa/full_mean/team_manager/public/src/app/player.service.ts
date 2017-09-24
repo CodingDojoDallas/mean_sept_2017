@@ -20,5 +20,18 @@ export class PlayerService {
       err => console.log(err)
     );
   }
-  
+
+  // destroy(newPlayer: Player, callback) {
+  //   this._http.delete(`/players/${newPlayer._id}`).subscribe(
+  //     res => callback(res.json()),
+  //     err => console.log(err)
+  //   );
+  // }
+  destroy(id: string, callback) {
+    this._http.delete(`/players/${id}`).subscribe(
+      res => callback(res.json()),
+      err => console.log(err)
+    );
+  }
+
 }
