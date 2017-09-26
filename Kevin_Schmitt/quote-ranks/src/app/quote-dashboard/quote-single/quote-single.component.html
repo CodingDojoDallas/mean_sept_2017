@@ -1,0 +1,16 @@
+<div>
+  <div>
+    <p>{{ quote.quote }}</p>
+    <p>{{ quote.author }}</p>
+  </div>
+  <div>
+    <p>{{ quote.votes }}</p>
+  </div>
+  <div>
+    <p>
+      <button (click)="increaseVote()">Vote Up</button> 
+      <button (click)="decreaseVote()">Vote Down</button> 
+      <button (click)="deleteQuote()">Delete</button> 
+    </p>
+  </div>
+</div>

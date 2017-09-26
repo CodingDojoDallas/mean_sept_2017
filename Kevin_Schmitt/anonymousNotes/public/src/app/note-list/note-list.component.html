@@ -1,0 +1,7 @@
+<p>
+  {{ notes | json }}
+</p>
+
+<div *ngFor='let note of notes'>
+  <p>{{ note.note }}</p>
+</div>
