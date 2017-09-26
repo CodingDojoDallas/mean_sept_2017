@@ -1,0 +1,20 @@
+<h2>Add a Car</h2>
+<form (submit)="createCar()">
+  <table>
+    <tr>
+      <td><label>Year</label></td>
+      <td><input type="number" name="year" [(ngModel)]="newCar.year"></td>
+    </tr>
+    <tr>
+      <td><label>Make</label></td>
+      <td><input type="text" name="make" [(ngModel)]="newCar.make"></td>
+    </tr>
+    <tr>
+      <td><label>Model</label></td>
+      <td><input type="text" name="model" [(ngModel)]="newCar.model"></td>
+    </tr>
+    <tr>
+      <td><input type="submit" value="Submit"></td>
+    </tr>
+  </table>
+</form>

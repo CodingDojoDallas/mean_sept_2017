@@ -1,0 +1,41 @@
+<div class="half">
+  <h2>Register</h2>
+  <form (submit)="createUser()">
+    <div>
+      <label>Name</label>
+      <input type="text" name="name" [(ngModel)]="newUser.name">
+    </div>
+    <div>
+      <label>Email</label>
+      <input type="text" name="email" [(ngModel)]="newUser.email">
+    </div>
+    <div>
+      <label>Password</label>
+      <input type="text" name="password" [(ngModel)]="newUser.password">
+    </div>
+    <div>
+      <label>Password Confirmation</label>
+      <input type="text" name="password_confirmation" [(ngModel)]="newUser.password_confirmation">
+    </div>
+    <div>
+      <input type="submit" value="Register">
+    </div>
+  </form>
+  <div>
+    <p *ngFor="let error of errors">{{ error }}</p>
+  </div>
+</div>
+<div class="half">
+  <h2>login</h2>
+  <form (submit)="loginUser()">
+      <div>
+          <label>Email</label>
+          <input type="text" name="email" [(ngModel)]="ninja.email">
+        </div>
+        <div>
+          <label>Password</label>
+          <input type="text" name="password" [(ngModel)]="ninja.password">
+        </div>
+        <input type="submit" value="Login">
+  </form>
+</div>
