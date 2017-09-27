@@ -1,13 +1,16 @@
 const mongoose = require('mongoose');
 
 const PlayerSchema = new mongoose.Schema({
-	name: {
-		type: String,
-	},
-	position: {
-			type: String,
-	},
-	games: Object
-}, {timestamps: true})
-
-mongoose.model('Player', PlayerSchema);
+    name: {
+    	type:String, 
+    	required: true, 
+    	minlength: 2
+    },
+    position: {
+    	type:String
+    },
+    status: {
+    	type:Object
+    }
+}, { timestamps: true });
+const Player = mongoose.model('Player', PlayerSchema);
