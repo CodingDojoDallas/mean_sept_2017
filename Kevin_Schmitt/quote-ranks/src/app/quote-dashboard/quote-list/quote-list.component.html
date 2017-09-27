@@ -1,0 +1,5 @@
+<app-quote-single 
+*ngFor='let quote of quotes; let idx = index' 
+[quote]='quote' 
+[index]='idx'
+(deleteQuoteEvent)='deleteQuote($event)'></app-quote-single>

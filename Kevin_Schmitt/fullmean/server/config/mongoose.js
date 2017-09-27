@@ -4,6 +4,8 @@ var mongoose = require('mongoose');
 var fs = require('fs');
 // require path for getting the models path
 var path = require('path');
+// change promise library to your own 
+mongoose.Promise=global.Promise
 // connect to mongoose
 mongoose.connect('mongodb://localhost/fullmean_db', { useMongoClient: true });
 // create a variable that points to the path where all of the models live

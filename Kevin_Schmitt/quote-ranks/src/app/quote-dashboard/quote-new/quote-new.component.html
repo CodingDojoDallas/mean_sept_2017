@@ -1,0 +1,12 @@
+<div>
+  <form (submit)='createQuote()'>
+    <div>
+      <textarea name="quote" [(ngModel)]="newQuote.quote" cols="30" rows="3"></textarea>
+    </div>
+    <div>
+      <label for="">Author</label>
+      <input type="text" name="author" [(ngModel)]='newQuote.author'>
+    </div>
+    <input type="submit" value="Submit">
+  </form>
+</div>

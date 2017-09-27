@@ -3,7 +3,8 @@ const Task = mongoose.model('Task');
 
 class TasksController {
 	index(req, res) {
-		Task.find({}, (err, tasks) => {
+		// sorts data and posts newest at top
+		Task.find({}).sort('-createdAt').exec((err, tasks) => {
 			if(err){
 				return res.json(err);
 			}

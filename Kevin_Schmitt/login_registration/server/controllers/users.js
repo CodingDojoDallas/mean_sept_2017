@@ -23,7 +23,7 @@ class UsersController {
             req.session.name = user.name;
             // for angular return json always / with ejs return render or redirect
             // return res.json(user);
-            return res.redirect('/dashboard');
+            return res.redirect('/dashboard');  
         })
     }
     authenticate(req,res){
