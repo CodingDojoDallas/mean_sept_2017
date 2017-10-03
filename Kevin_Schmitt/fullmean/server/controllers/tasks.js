@@ -47,7 +47,6 @@ class TasksController {
 		})
 	}
 }
-
 // get all tasks method: index, route: /tasks, type: get
 // create a task method: create, route: /tasks type: post
 // get a single task form the db method: show, route: /tasks/:id, type: get
