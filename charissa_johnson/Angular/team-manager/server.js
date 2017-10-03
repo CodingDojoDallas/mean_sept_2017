@@ -1,16 +1,19 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const port = 8000;
+const express = require('express');
+const path = require('path');
 const app = express();
+const PORT  = 8000;
 
-//middleware
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, './public/dist')));
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/public/dist'));
 
-//mongoose file
-require('./server/config/mongoose');
+require('./server/config/mongoose.js');
 
-//routes
-require('./server/config/routes')(app);
+const routes_setter = require('./server/config/routes.js')
+routes_setter(app);
 
-app.listen(port, () => console.log(`listening on ${port}...`));
+app.listen(PORT, ()=>{
+  console.log('listening on port' + PORT);
+});
